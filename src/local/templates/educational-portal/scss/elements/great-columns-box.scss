@@ -1,0 +1,23 @@
+.great-columns-box{ 
+    display: flex; 
+    .inner-mobile{
+        padding-right: 1px;
+    } 
+    .gcb__left-col{
+        max-width: calc(100% - 349px)  ; 
+        flex-grow: 1;
+        padding-right: 4rem;
+        box-sizing: border-box; 
+    }
+    .gcb___right-col{
+        width: 349px; 
+        flex-shrink: 0;
+        .inner-mobile{
+            position: sticky;
+            top: 1rem;
+            flex-grow: 0;
+            
+        }
+    } 
+
+}

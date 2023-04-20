@@ -1,0 +1,201 @@
+ @media screen and (max-width: 1240px){
+    *{
+        cursor: auto !important;
+    }
+    button, a{
+        cursor: pointer !important;
+        &>*{
+            cursor: pointer !important;
+        }
+        
+    }
+    .bat{
+        display: none;
+    }
+ }
+ @media screen and (max-width: 1200px){
+    .expertise-type-box { 
+        grid-gap: 2rem;
+    }
+    .expertise-type-item {
+        padding: 3rem;
+        .expertise-type-item__caption{
+            font-size: 1.8rem;
+        } 
+    }
+ }
+ @media screen and (max-width: 1100px){
+    .scanbox-gallery { 
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 3rem;
+    }
+ }
+ @media screen and (max-width: 1024px){
+    h3, .h3{
+        font-size: 2.7rem;
+    }
+    .big-reviews-section{
+        .great-columns-box{
+            flex-direction: column;
+            .gcb__left-col{
+                width: 100%;
+                max-width: 100%;
+                padding-right: 0;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+ }
+ @media screen and (max-width: 960px){
+    .expertise-type-box {
+        grid-template-columns: repeat(2, 1fr);
+        .expertise-type-item{
+            &:last-child{
+                grid-column: 1/3;
+            }
+        }
+    }
+ }
+ // Меняю размер шрифта 
+@media screen and (max-width: 867px) {
+    :root {
+        font-size: 9px;
+    } 
+    h2, .h2{
+        font-size: 3.1rem;
+    }
+    #main{
+        padding-bottom: 8rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .scanbox-gallery { 
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 3rem;
+    }
+}
+@media screen and (max-width: 770px){
+    .expertise-section__header{
+        .section-title{
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+    }
+}
+@media screen and (max-width: 700px){
+    .bedsheet {
+        padding: 3.5rem 4%;
+    }
+}
+// Меняю размер шрифта 
+@media screen and (max-width: 625px){
+    :root {
+        font-size: 8.5px;
+    } 
+    .section-header{
+        margin-bottom: 3rem;
+    }
+    .reviews-section {
+        .section-header{
+            display: block;
+            .section-title{
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    .btn { 
+        padding:  1rem 1.5rem; 
+        min-height: 5rem; 
+        &--upp{
+            font-size: 12px;
+        }
+    }
+}
+@media screen and (max-width: 570px){
+    #main{
+        padding-bottom: 6rem;
+    }
+    .expertise-section__header{ 
+        .section-title{
+            width: 100%;
+            margin-bottom: 2.3rem;
+        }
+    }
+    .expertise-type-box { 
+        grid-template-columns: 1fr;
+        .expertise-type-item{
+            padding: 2.3rem;
+            min-height: 130px;
+            img{
+                width: 7rem;
+                height: 7rem;
+            }
+            svg{
+                width: 30px;
+                height: auto;
+
+            }
+            &:last-child{
+                grid-column: 1;
+            }
+        }
+    }
+}
+@media screen and (max-width: 507px){
+    .questions-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .reviews-section {
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+    }
+    .review-card {
+        padding: 2.2rem; 
+        padding-bottom: 3rem;
+        .review-card__header {
+            margin-bottom: 1.2rem;
+            .review-card-header__decor-elem{
+                width: 40px;
+                height: 40px; 
+                margin-right: 1rem;
+            }
+            .reviews-section__course{
+                clear: both;
+            }
+            .reviews-section__name{
+                padding-top: 5px;
+                margin-bottom: 1.2rem;
+                font-size: 1.6rem;
+            }
+        } 
+        .review-card__body {
+            padding: 0;
+            p {
+                margin: 1.2rem 0;
+                font-size: 1.6rem;
+            }
+            a{
+                margin-top: 0.5rem;
+            }
+        }
+    } 
+} 
+@media screen and (max-width: 500px){
+    .spoiler { 
+        padding: 0px 1.5rem; 
+    }
+    .scanbox-gallery { 
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 3rem;
+    }
+}
+@media screen and (max-width: 350px){
+    .review-card {
+        padding: 1.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .inner {
+        padding: 0 10px;
+    }
+}

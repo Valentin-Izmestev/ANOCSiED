@@ -1,0 +1,102 @@
+.great-shadow{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start; /* см. ниже */
+    align-items: flex-start;
+    z-index: 99; 
+    background-color: rgba(22, 22, 36, 0.7);
+    z-index: 1000;
+    transition: var(--great-transition);
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    &--show{
+        opacity: 1;
+        visibility: visible;
+ 
+    }
+}
+
+.modal-wr{
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;  
+    margin: auto; 
+    padding: 1.5rem;
+    box-sizing: border-box;
+    z-index: 1010;  
+
+    &.active{ 
+        display: flex;
+        .modal{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.modal{
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 480px;
+    width: 100%;
+    padding: 5rem 4.75%;
+    background-color: var(--light);
+    box-sizing: border-box; 
+    font-size: 1.6rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--great-transition); 
+    .modal__one-elem{
+        font-size: 1.4rem;
+        a{
+            font-size: 1.4rem;
+        }
+    }
+    .modal__two-elem{ 
+        font-size: 1.4rem;
+        a{
+            font-size: 1.4rem;
+        }
+    }
+    .modal__caption{
+        margin-bottom: 3.6rem;
+    }
+    button[type="submit"]{
+        margin-top: 4rem;
+    }
+    a{
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+ 
+.modal-auth-reg{
+    .form-elem{ 
+        margin-bottom: 2rem;
+    }
+    .modal__two-elem{
+        gap: 1rem;
+    }
+    .modal-auth-reg__footer{
+        margin-top: 4rem;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+}

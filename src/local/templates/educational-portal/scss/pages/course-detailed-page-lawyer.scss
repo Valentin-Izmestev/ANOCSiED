@@ -1,0 +1,324 @@
+.course-col-box{ 
+    display: flex; 
+    .inner-mobile{
+        padding-right: 1px;
+    }
+    .project-slider__conrtol-panel .swiper-button-next {
+        margin-left: 2.4rem;
+        margin-right: 0;
+    }
+    .gcb__left-col{
+        max-width: calc(100% - 349px)  ; 
+        flex-grow: 1;
+        padding-right: 4rem;
+        box-sizing: border-box; 
+    }
+    .gcb__right-col{
+        width: 349px; 
+        flex-shrink: 0;
+        .inner-mobile{
+            position: sticky;
+            top: 1rem;
+            flex-grow: 0; 
+        }
+    } 
+
+}
+
+.course-profit-section{ 
+    padding-bottom: 4rem;
+    .bedsheet{
+        padding: 5.6rem 6%;
+    }
+}
+
+.course-program-section{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+    .spoiler{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+    .spoiler__header{
+        padding: 2.5rem 0;
+    }
+    .reward{
+        margin-top: 4rem;
+    }
+}
+
+.authors-section{
+    padding: 4rem 0;
+
+}
+.student-reviews-section{
+    position: relative;
+    padding-top: 3.8rem; 
+    padding-bottom: 4rem;
+    overflow: hidden;
+}
+.student-reviews__header{
+    align-items: center;
+    .section-title{
+        margin-bottom: 0;
+    }
+}
+
+.full-program-form-finder {
+    margin-top: 4rem;
+    // border: 1px solid var(--text-color);
+    .form-panel__form {
+        
+        position: relative;
+        width: 53.5%; 
+        padding: 6rem 6%;
+        // border-right: 1px solid var(--text-color);
+        background-color: var(--light);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        .form-panel-form__caption{
+            font-size: 2.6rem;
+            line-height: 1.4;
+            margin-bottom: 2.2rem;
+        }
+        .form-elem{
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        .form-panel-form__footer{
+            margin-top: 3.5rem;
+            align-items: flex-start;
+        }
+    }
+    .form-panel__decor-box { 
+        width: 46.5%;
+    }
+    &.form-panel--finder .form-panel__decor-elem {
+        max-height: 579px;
+    }
+}
+// .student-reviews-sl__conrtol-panel .swiper-button-next {
+//     margin-left: 2.4rem;
+//     margin-right: 0;
+// }
+@media screen and (max-width: 1500px){
+    .course-col-box {  
+        .inner-mobile{
+            padding-right: 2px;
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+ 
+    .course-col-box { 
+        display: flex; 
+        flex-direction: column;
+        .inner-mobile{
+            padding-right: 2px;
+        }
+        .gcb__left-col {
+            max-width: 100%; 
+            flex-grow: 1;
+            padding-right:0; 
+            margin-bottom: 8rem;
+        }
+        .gcb__right-col{
+            width: 100%;
+        }
+    }  
+    .course-form{
+        .course-form__caption {
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+        .course-form__columns-box{
+            display: flex;
+            .course-form__info-list{
+                display: block;
+                width: 20%; 
+                margin: 0;
+                .course-card-info-list__item{
+                    display: block;
+                    &:not(:last-child){
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+            .course-form__left-col{
+                order: -1;
+                width: 80%;
+                padding-right: 4rem;
+                box-sizing: border-box;
+                margin-bottom: 0;
+            }
+             
+        }
+        input[type=submit] {
+            margin-top: 4rem;
+            max-width: 300px;
+        }
+    }
+
+}
+@media screen and (max-width: 800px){
+    .authors-grid { 
+        grid-gap: 3rem;
+    }
+    .student-reviews-sl {
+        max-width: 140%;
+        width: 140%;
+    }
+    .inner--desk{
+        padding: 0
+    }
+    .course-col-box{
+        .inner-mobile{
+            padding: 0 20px;
+        }
+    }
+}
+@media screen and (max-width: 700px){
+    .authors-grid { 
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .course-form {
+        .course-form__columns-box { 
+            display: block; 
+            .course-form__info-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 2rem;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            .course-form__left-col{
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+        input[type=submit] {
+            margin-top: 3rem;
+            max-width: 100%;
+        }
+    } 
+    .course-profit-section .bedsheet {
+        padding: 5.6rem 4%;
+    }
+    .team-help { 
+        padding: 2rem; 
+    }
+    .course-profit-section .bedsheet {
+        padding: 3.5rem 4%;
+    }
+}
+@media screen and (max-width: 660px){
+    .course-col-box{ 
+        .full-program-form-finder .form-panel__form {
+            position: relative;
+            width: 100%;
+            padding: 4rem 6%;
+            background-color: var(--light);
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .full-program-form-finder .form-panel__decor-box {
+            width: 100%;
+        }
+    } 
+    .course-profit-section {
+        padding-bottom: 2rem;
+    }
+    .course-program-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .authors-section {
+        padding: 2rem 0;
+    }
+    .course-col-box .gcb__left-col { 
+        margin-bottom: 4rem;
+    }
+
+    .student-reviews-sl__conrtol-panel {
+        display: none;
+    }
+    .student-reviews__header{
+        flex-direction: column;
+        align-items: flex-start;
+        .section-title{
+            margin-bottom:1.5rem;
+        }
+    }
+    .reward { 
+        padding: 2rem; 
+    }
+    .reward .reward__img {  
+        margin-right: 2rem;
+    }
+}
+@media screen and (max-width: 520px){
+    .authors-grid { 
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .course-form {
+        padding-left: 6%;
+        padding-right: 6%;
+        .course-form__columns-box {
+            .course-form__info-list { 
+                grid-template-columns: repeat(2,1fr);  
+                grid-gap: 1rem;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+    .student-reviews-sl {
+        max-width: 170%;
+        width: 170%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .team-help{
+        flex-direction: column;
+        text-align: center;
+        .team-help__img { 
+            margin-right: 0;
+            width: 10rem; 
+            margin-bottom: 1rem;
+        }
+    }
+    .course-form .course-form__caption {
+        display: block;
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+}
+@media screen and (max-width: 435px) { 
+    .inner--desk{
+        padding: 0;
+    }
+    .course-col-box .inner-mobile {
+        padding: 0 15px;
+    }
+    .reward {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .reward__img {
+            margin-right: 20;
+        }
+    }
+}
+@media screen and (max-width: 350px) { 
+    main .inner--desk{
+        padding: 0;
+    } 
+    .course-col-box { 
+        .inner-mobile {
+            padding: 0 10px;
+        }
+    }
+}

@@ -1,0 +1,266 @@
+.great-banner{
+    position: relative;
+    padding: 7rem 6% 7.7rem 6%;
+    margin-bottom: 8rem;
+    color: var(--light);
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &--darkness-style{
+        background-color: var(--text-color);
+        background-image: url(../img/darkness-bg.png);
+    }
+    &--expert-style{
+        background-image: url(../img/expert-banner-bg.png);
+        .btn--light{
+            color: var(--expert-color);
+        }
+    }
+    &--lawyer-style{
+        background-image: url(../img/lawyer-banner-bg.png);
+        .btn--light{
+            color: var(--lawyer-color);
+        }
+    }
+    &--darkness{
+        
+        &::after{
+            content: '';
+            position: absolute;
+            width: 38.8%;
+            height: auto;
+            bottom: 0;
+            right: 3%;
+            aspect-ratio: 1.42/1;
+            background-image: url(../img/justice-img.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+        }
+    }
+    
+    &--lawyer-course{  
+        &::after{
+            content: '';
+            position: absolute;
+            width: 42%;
+            height: auto;
+            bottom: 0;
+            right: 1%;
+            aspect-ratio: 321/317;
+            background-image: url(../img/femida.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+        }
+        
+    }
+    
+    &--expert-course{  
+        &::after{
+            content: '';
+            position: absolute;
+            width: 42%;
+            height: auto;
+            bottom: 0;
+            right: 0%;
+            aspect-ratio: 1.33/1;
+            background-image: url(../img/plan-helm.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+        }
+       
+    }
+    &--seal {
+        &::after{
+            content: '';
+            position: absolute;
+            width: 19%;
+            height: auto;
+            bottom: 50%;
+            right: 6%;
+            aspect-ratio: 157/152;
+            background-image: url(../img/seal.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+            transform: translateY(50%);
+        }
+    }
+    &--video{
+        &::after{
+            content: '';
+            position: absolute;
+            width: 20.6%;
+            height: auto;
+            bottom: 50%;
+            right: 10%;
+            aspect-ratio: 1.37/1;
+            background-image: url(../img/video-button.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+            transform: translateY(50%);
+        }
+    }
+    &--megafon{
+        &::after{
+            content: "";
+            position: absolute;
+            width: 18.6%;
+            height: auto;
+            bottom: 49%;
+            right: 9%;
+            aspect-ratio: 1/1.11;
+            background-image: url(../img/megafon.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+            transform: translateY(50%);
+        }
+    }
+    .great-banner__content{
+        max-width: 788px;
+        width: 60%;
+        p{
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-top: 2rem;
+        }
+    }
+    .breadcrumbs{
+        margin-bottom: 17px;
+    }
+    .page-title{
+        margin-bottom: 3rem;
+    }
+    .course-card-info-list{
+        margin-top: 4rem;
+        .course-card-info-list-item{
+            &:not(:last-child){
+                margin-right: 6rem;
+            }
+            .course-card-info-list-item__key{
+                color: var(--light);
+            }
+            .course-card-info-list-item__value{
+                color: var(--light);
+                font-size: 2rem;
+            }
+        }
+        
+    }
+    .btn{ 
+        margin-top: 4rem; 
+        max-width: 188px;
+        padding-top: 1.6rem;
+        padding: 1rem;
+    }
+}
+
+
+//------------- media -------------------
+
+@media screen and (max-width: 1400px){
+    .great-banner--megafon::after { 
+        width: 22.6%; 
+        bottom: 49%;
+        right: 6%; 
+    }
+}
+@media screen and (max-width: 1360px){
+    .great-banner--lawyer-course::after { 
+        width: 51%; 
+        bottom: 0;
+        right: 0%; 
+    }
+}
+@media screen and (max-width: 1300px){
+    .great-banner--video::after { 
+        width: 25.6%; 
+        right: 7%; 
+    }
+}
+@media screen and (max-width: 1200px){
+    .great-banner {
+        .page-title {
+            font-size: 5rem;
+        }
+    }
+    .great-banner--expert-course::after { 
+        width: 50%; 
+        bottom: 0;
+        right: -5%; 
+    }
+}
+@media screen and (max-width: 1100px){
+    .great-banner--darkness::after { 
+        width: 51.8%; 
+        right: -9%; 
+    }
+    .great-banner--lawyer-course::after {
+        width: 60%;
+        right: -6%;
+    }
+}
+@media screen and (max-width: 1100px){
+    .great-banner--darkness::after {  
+        width: 69.8%;
+        right: -24%; 
+    }
+}
+@media screen and (max-width: 800px){
+    .great-banner--lawyer-course::after {
+        width: 60%;
+        right: -9%;
+    }
+}
+@media screen and (max-width: 750px){
+    .great-banner--darkness::after,
+    .great-banner--lawyer-course::after,
+    .great-banner--video::after,
+    .great-banner--expert-course::after,
+    .great-banner--seal::after, 
+    .great-banner--megafon::after {  
+        display: none;
+    } 
+    .great-banner--video::after { 
+        width: 25.6%; 
+        right: 7%; 
+    }
+    .great-banner {
+        padding: 4rem 6% 4.7rem 4%;
+        .great-banner__content {
+            max-width: 100%;
+            width: 100%; 
+        }
+    }  
+}
+@media screen and (max-width: 600px){
+    .great-banner {
+        padding: 4rem 3rem 4.7rem 3rem;
+        .page-title {
+            font-size: 4rem;
+        }
+        .great-banner__content {
+            max-width: 100%;
+            width: 100%;
+            p {
+                font-size: 1.6rem;
+                line-height: 1.6;
+                margin-top: 2rem;
+            } 
+        }
+        .course-card-info-list{
+            .course-card-info-list-item:not(:last-child) {
+                margin-right: 4rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px){
+    .great-banner .btn { 
+        max-width: 100%; 
+    }
+}

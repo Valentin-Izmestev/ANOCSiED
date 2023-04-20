@@ -1,0 +1,321 @@
+.reviews-slider {
+    width: 124%;
+}
+
+.project-slider {
+
+    .swiper-slide {
+        height: auto;
+
+        .review-card {
+            height: 100%;
+        }
+    }
+
+    .swiper-wrapper {
+        height: auto;
+        padding-bottom: 1rem;
+    }
+}
+
+.project-slider__conrtol-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 30px;
+
+    .swiper-pagination {
+        position: relative;
+        bottom: 0;
+        width: auto;
+
+        .swiper-pagination-bullet {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            padding: 0;
+            margin: 0;
+            background-image: url(../img/sl-pagination-circle.svg);
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 1;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:not(:last-child) {
+                margin-right: 8px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 6px;
+                height: 6px;
+                margin-top: -3px;
+                margin-left: -3px;
+                background-color: var(--expert-color);
+                border-radius: 50%;
+                transform: scale(0);
+                transform-origin: center center;
+                transition: var(--great-transition);
+            }
+
+            &-active {
+                background-image: url(../img/sl-pagination-circle-active.svg);
+
+                &::before {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 4rem;
+        height: 4rem;
+        padding: 0;
+        margin: 0;
+
+        &::after {
+            display: none;
+        }
+
+        svg {
+            path {
+                transition: var(--great-transition);
+                fill: var(--dark);
+            }
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: var(--lawyer-color);
+                }
+            }
+        }
+    }
+
+    .swiper-button-prev {
+        margin-left: auto;
+    }
+
+    .swiper-button-next {
+        margin-left: 2.4rem;
+        margin-right: 2.4rem;
+    }
+
+    &--expert-style {
+
+        .swiper-button-prev,
+        .swiper-button-next {  
+            &::after {
+                display: none;
+            }
+
+            svg {
+                path {
+                    transition: var(--great-transition);
+                    fill: var(--dark);
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill: var(--expert-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.scan-slider {
+    .swiper-slide {
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        box-sizing: border-box;
+    }
+}
+
+.scan-slider__conrtol-panel {
+    margin-top: 33px;
+
+    .swiper-button-next {
+        margin-right: 0;
+    }
+}
+
+.student-reviews-sl {
+    max-width: 1130px;
+
+    .review-card-header {
+        padding-right: 7.5rem;
+        box-sizing: border-box;
+
+        .reviews-section__date {
+            position: absolute;
+            top: 1.2rem;
+            right: 0;
+            font-size: 1.4rem;
+            line-height: 1;
+            color: var(--light-dark);
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .student-reviews-sl {
+        .review-card {
+            .review-card-header {
+                padding: 0;
+                margin-bottom: 1.5rem;
+
+                .reviews-section__date {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                }
+
+                .reviews-section__name {
+                    display: flex;
+                    align-items: center;
+                    min-height: 4.94rem;
+                }
+
+                .reviews-section__course {
+                    margin-top: 1rem;
+                    clear: both;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .review-card {
+        padding: 3rem;
+        padding-bottom: 3.5rem;
+
+        .review-card__header {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    .reviews-section {
+        padding-top: 4rem;
+        padding-bottom: 9.8rem;
+
+        .reviews-slider {
+            width: 160%;
+        }
+
+        .project-slider__conrtol-panel {
+            display: none;
+        }
+    }
+
+    .review-card {
+        .review-card__body {
+            a {
+                position: relative;
+                display: inline-block;
+                margin-top: 0.5rem;
+                color: var(--expert-color);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .scan-slider__conrtol-panel {
+        display: none;
+    }
+
+    .scan-slider {
+        width: 120%;
+    }
+
+    .review-card {
+        .review-card__header {
+            margin-bottom: 1rem;
+
+            .reviews-section__course {
+                clear: both;
+                margin-top: 1rem;
+            }
+
+            .reviews-section__name {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0;
+                min-height: 4.94rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .student-reviews-sl {
+        .review-card {
+            .review-card-header {
+                padding: 0;
+
+                .reviews-section__date {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                }
+
+                .reviews-section__name {
+                    display: flex;
+                    align-items: center;
+                    min-height: 4.94rem;
+                }
+
+                .reviews-section__course {
+                    margin-top: 1rem;
+                    clear: both;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 507px) {
+    .student-reviews-sl {
+        .review-card {
+            .review-card-header {
+                .reviews-section__name {
+                    align-items: flex-end;
+                    min-height: 4.7rem;
+                    padding-top: 0;
+                }
+
+                .reviews-section__course {
+                    margin-top: 0;
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .scan-slider {
+        width: 140%;
+    }
+}

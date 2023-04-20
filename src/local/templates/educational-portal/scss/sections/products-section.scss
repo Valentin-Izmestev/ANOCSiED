@@ -1,0 +1,165 @@
+
+.products-section {
+    padding-top: 6.3rem;
+    padding-bottom: 5.5rem;
+
+    .products-section__header {
+        
+
+        .section-title {
+            max-width: 330px;
+            margin-right: 3rem;
+        }
+
+        .products-section__description {
+            max-width: 350px;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+    }
+}
+
+.product-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+}
+
+.product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 7rem;
+    padding-top: 5rem;
+    min-height: 41rem;
+    aspect-ratio: 371/300;
+    color: var(--light);
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .product__caption {
+        color: var(--light);
+        margin-bottom: 2.8rem;
+    }
+
+    p,
+    .product__caption {
+        // max-width: 413px;
+        width: 71%;
+    }
+
+    p {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        margin-top: auto;
+        max-width: 158px;
+    }
+
+    &--lawyer {
+        background-color: var(--lawyer-color);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45%;
+            aspect-ratio: 333/334;
+            background-image: url(../img/product-lawyer-img.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+
+        }
+    }
+
+    &--expert {
+        background-color: var(--expert-color);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            // width: 273px;
+            // height: 486px;
+            width: 35.8%;
+            aspect-ratio: 91/162;
+            background-image: url(../img/product-expert-img.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 1230px) {
+    .product-box {
+        grid-gap: 2rem;
+    }
+
+    .product {
+        padding: 3.3rem 20% 3rem 3rem;
+        aspect-ratio: auto;
+
+        .product__caption {
+            width: 100%;
+            font-size: 3rem;
+        }
+
+        p {
+            width: 100%;
+            font-size: 1.6rem;
+        }
+
+        &--expert {
+            &::after {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .products-section {
+        .products-section__header {
+            display: block;
+            margin-bottom: 3rem;
+            .section-title {
+                max-width: 100%;
+                margin-right: 0;
+            }
+            .products-section__description {
+                display: block;
+                margin-top: 2rem;
+                max-width: 35rem;
+                font-size: 1.8rem; 
+            }
+        } 
+    }  
+    .product .btn { 
+        max-width: 130px;
+    }
+    .product--lawyer::after {
+        right: -5px;
+        width: 41%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .product-box {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 450px) {
+    .product{
+        min-height: 37.64rem;
+    }
+}

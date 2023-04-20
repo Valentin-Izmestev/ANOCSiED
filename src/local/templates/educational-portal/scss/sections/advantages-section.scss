@@ -1,0 +1,185 @@
+.advantages-section {
+    padding-top: 14.3rem;
+    padding-bottom: 6rem;
+}
+
+.advantages {
+    display: flex;
+
+    .advantages__img-box {
+        position: relative;
+        flex-shrink: 0;
+        width: 440px;
+        position: relative;
+        background-color: var(--light-dark);
+        background-image: url(../img/interferences.jpg);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 111%;
+            background-image: url(../img/dude.png);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+        }
+    }
+
+    .advantages__content-box {
+        position: relative;
+        flex-grow: 1;
+        padding: 8rem 5%;
+        padding-bottom: 5.8rem;
+        background-color: var(--light);
+        box-sizing: border-box;
+        z-index: 1;
+
+        .advantages__title {
+            margin-bottom: 7.7rem;
+        }
+    }
+
+    .advantages__list {}
+}
+
+
+.advantages-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5.7rem;
+    grid-row-gap: 3.7rem;
+
+    .advantages-list__item {}
+}
+
+
+.advantages-list-item {
+    display: flex;
+
+    .advantages-list-item__icon {
+        flex-shrink: 0;
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        margin-right: 1.6rem;
+        background-image: url(../img/bird-circle.svg);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .advantages-list-item__caption {
+        font-size: 1.8rem;
+        color: var(--dark);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .advantages {
+        align-items: center;
+
+        .advantages__img-box {
+            max-width: 310px;
+            height: 478px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .advantages {
+        .advantages__content-box {
+            padding-bottom: 0;
+            padding: 4.1rem 5%;
+        }
+
+        .advantages__content-box {
+            min-height: 510px;
+            .advantages__title {
+                margin-bottom: 4.1rem;
+            }
+        }
+
+    }
+    .advantages-list { 
+        grid-template-columns: repeat(1,1fr); 
+        grid-row-gap: 3.7rem;
+    }
+    .advantages-list-item {
+        .advantages-list-item__caption {
+            font-size: 1.6rem;
+        }
+    }
+
+ 
+}
+@media screen and (max-width: 800px){
+    .advantages-list {  
+        grid-row-gap: 3.2rem;
+    }
+    .advantages-section {
+        padding-top: 10.3rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 660px){
+    .advantages-section {
+        padding-top: 6.3rem;
+        padding-bottom: 4rem;
+    }
+    .advantages {
+        display: block;
+        .advantages__img-box{
+            max-width: 100%;
+            width: 100%;
+            // height: 172px;
+            height: 28rem;
+        } 
+        .advantages__content-box {
+            padding-bottom: 0;
+            padding: 2.2rem;
+        }
+
+        .advantages__content-box {
+            min-height: auto;
+            .advantages__title {
+                margin-bottom: 2.2rem;
+            }
+        }
+    } 
+    .advantages-list-item {
+        .advantages-list-item__icon {
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            position: relative;
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-right: 1.2rem; 
+        }
+    }
+    .advantages-list { 
+        grid-template-columns: repeat(1,1fr); 
+        grid-row-gap: 3.2rem;
+    } 
+}
+@media screen and (max-width: 550px){
+    .advantages-section {
+        padding-top: 2.3rem;
+        padding-bottom: 4rem;
+    }
+}
+@media screen and (max-width: 400px){
+
+    .advantages {
+        display: block;
+        .advantages__img-box{
+            max-width: 100%;
+            width: 100%;
+            height: 172px; 
+        }
+    }
+}

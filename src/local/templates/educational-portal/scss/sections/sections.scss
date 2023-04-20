@@ -1,0 +1,81 @@
+.questions-section{
+    position: relative;
+    padding-top: 5.5rem;
+    padding-bottom: 6rem;
+    overflow: hidden;
+    .inner{
+        &:first-child{
+            max-width: 1040px;
+        }
+        
+    }
+    .section-title{
+        margin-bottom: 4rem;
+    }
+    .spoiler{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+    .form-panel--finder{
+        margin-top: 12rem;
+    }
+}
+
+.reviews-section{
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 11.8rem;
+    overflow: hidden;
+    .section-title{
+        margin-bottom: 0;
+    }
+    .section-header{
+        padding-right: 2rem;
+        align-items: center;
+    }
+    .inner{
+        padding-right: 0;
+        overflow: visible
+    }
+    .section-header{ 
+
+    }
+}
+
+.expertise-section{
+    position: relative;
+    padding-top: 12.3rem;
+    overflow: hidden;
+    .section-title{
+        margin-bottom: 0;
+    }
+    .expertise-section__header{
+        span{
+            max-width: 47.8rem;
+            font-size: 1.8rem;
+            line-height: 1.6;
+        }
+    }
+    .expertise-type-box{
+        margin-bottom: 8rem;
+    }
+}
+.diplobas-and-certificates-section{
+    .scanbox-gallery{
+        margin-top: 8rem;
+    }
+}
+.big-reviews-section{
+    .review-card{ 
+        &:not(:last-child){
+            margin-bottom: 2rem
+        }
+        .review-card__body {
+            .review-card__text{
+                height: auto;
+            }
+        }
+    }
+    
+}
