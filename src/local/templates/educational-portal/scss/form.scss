@@ -316,6 +316,7 @@
                 aspect-ratio: 617/525;
                 background-image: url(../img/dude-seekers.png);
                 background-size: contain;
+                background-repeat: no-repeat;
             }
         }
     }
@@ -331,6 +332,64 @@
                 aspect-ratio: 1.37/1;
                 background-image: url(../img/big-loupe.png);
                 background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    } 
+    &--stroytech-exp{
+        .form-panel__decor-elem{
+            max-height: 586px; 
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%; 
+                aspect-ratio: 1/1.44;
+                background-image: url(../img/stroytech.png);
+                background-size: contain;
+                max-width: 408px;
+                height: 100%;
+                background-position: right bottom;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    &--electro-exp{
+        .form-panel__decor-elem{
+            max-height: 586px; 
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 3%;
+                width: 100%; 
+                aspect-ratio: 267/253;
+                background-image: url(../img/multitester.png);
+                background-size: contain;
+                max-width: 566px;
+                height: 100%;
+                background-position: right bottom;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    &--fire-exp{
+        .form-panel__decor-elem{
+            max-height: 586px; 
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 102%; 
+                aspect-ratio: 122/99;
+                background-image: url(../img/fire-helmet.png);
+                background-size: contain;
+                max-width: 500px;
+                height: 100%;
+                background-position: right center;
+                background-repeat: no-repeat;
             }
         }
     }
@@ -566,6 +625,12 @@
             }
         }
     } 
+    .form-panel--electro-exp .form-panel__decor-elem::before { 
+        width: 94%; 
+    }
+    .form-panel--fire-exp .form-panel__decor-elem::before { 
+        width: 97%; 
+    }
 } 
 @media screen and (max-width: 800px){
     .form-panel--finder {
@@ -634,6 +699,26 @@
     .courses-catalog-filter {
         .courses-tab-control .btn:not(:last-child) {
             margin-right: 5px;
+        }
+    }
+    .form-panel.form-panel--stroytech-exp  .form-panel__decor-box .form-panel__decor-elem{
+        overflow: hidden;
+        &::before{
+            right: 0;
+            transform: translateX(0);
+        }
+    }
+    .form-panel--electro-exp .form-panel__decor-elem::before{
+        height: 94%;
+    } 
+    .form-panel.form-panel--fire-exp .form-panel__decor-box .form-panel__decor-elem{
+        overflow: hidden;
+        &::before{
+            height: 95%;
+            width: 100%;
+            right: 0;
+            bottom: 3px;
+            transform: translateX(0);
         }
     }
 }

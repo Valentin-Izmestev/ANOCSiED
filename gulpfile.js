@@ -11,6 +11,7 @@ let path = {
         js: project_folder +"/local/templates/educational-portal/js/",
         img: project_folder +"/local/templates/educational-portal/img/",
         image: project_folder +"/local/templates/educational-portal/image/",
+        video: project_folder +"/local/templates/educational-portal/video/",
         fonts: project_folder +"/local/templates/educational-portal/fonts/"
     },
     //исходники
@@ -20,6 +21,7 @@ let path = {
         js: source_folder +"/local/templates/educational-portal/js/script.js",
         img: source_folder +"/local/templates/educational-portal/img/**/*.{jpg,png,svg,gif,ico,webp}",
         image: source_folder +"/local/templates/educational-portal/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        video: source_folder +"/local/templates/educational-portal/video/**/*.{mp4,ogv,webm}",
         fonts: source_folder + "/local/templates/educational-portal/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // пути папок за которыми нужно будет следить
@@ -29,6 +31,7 @@ let path = {
         js: source_folder +"/local/templates/educational-portal/js/**/*.js",
         img: source_folder +"/local/templates/educational-portal/img/**/*.{jpg,png,svg,gif,ico,webp}",
         image: source_folder +"/local/templates/educational-portal/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        video: source_folder +"/local/templates/educational-portal/video/**/*.{mp4,ogv,webm}",
         fonts: source_folder + "/local/templates/educational-portal/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // путь к папке, которая будет чиститься при сохранении
@@ -106,6 +109,11 @@ function image(){
         .pipe(dest(path.build.image))
         
 }
+function video(){
+    return src(path.src.video)
+        .pipe(dest(path.build.video))
+        
+}
 function browserSync(params){
     browsersync.init({
         server: {
@@ -136,6 +144,7 @@ function watchFiles(params){
     gulp.watch([path.watch.js], scripts);
     gulp.watch([path.watch.img], img);
     gulp.watch([path.watch.image], image);
+    gulp.watch([path.watch.video], video);
 }
 
 
@@ -144,7 +153,7 @@ function clean(){
     return del(path.clean); 
 }
 
-let build = gulp.series(clean, gulp.parallel(fonts, styles, html,  scripts, img, image ));// указываем, какие функции должны выполняться gulp-ом
+let build = gulp.series(clean, gulp.parallel(fonts, styles, html,  scripts, img, image, video ));// указываем, какие функции должны выполняться gulp-ом
 let watch = gulp.parallel(build, watchFiles, browserSync);//фукции которые будут выполняться при прослушивании
 
 // экспортируем переменные и функции в gulp
@@ -154,6 +163,7 @@ exports.scripts = scripts;
 exports.fonts   = fonts;
 exports.img     = img;
 exports.image   = image;
+exports.video   = video;
 exports.build   = build;
 exports.watch   = watch;
 exports.default = watch;

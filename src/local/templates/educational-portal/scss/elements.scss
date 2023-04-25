@@ -435,7 +435,9 @@
     padding: 4rem;
     background-color: var(--expert-color);
     box-sizing: border-box;
+    transition: var(--great-transition);
     color: var(--light);
+    text-decoration: none;
     .expertise-type-item__caption{
         display: block;
         font-size: 2.4rem;
@@ -454,7 +456,8 @@
         margin-top: auto;
     }
     &:hover{
-        text-decoration: none;
+        
+        background-color: var(--lawyer-color);
     }
 }
 
@@ -502,9 +505,8 @@
 }
 
 .bedsheet{
-    background-color: var(--light);
-    padding: 8rem 128px;
-    padding: 8rem 4%;
+    background-color: var(--light); 
+    padding: 8rem 4%; 
     box-sizing: border-box;
     *{
         &:first-child{
@@ -514,6 +516,9 @@
             margin-bottom: 0 !important;
         }
     }
+    h3, .h3, h4, .h4, h5, .h5{
+        margin: 4rem 0;
+    }
     b{
         font-weight: 500;
     }
@@ -521,23 +526,7 @@
         margin: 2rem 0;
     }
 }
-.streak-marker{
-    li{
-        position: relative;
-        padding-left: 3rem;
-        box-sizing: border-box;
-        &:not(:last-child){
-            margin-bottom: 2rem;
-        }
-        &::before{
-            content: url("data:image/svg+xml,%3Csvg width='19' height='5' viewBox='0 0 19 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.00358 3.65286C1.54833 0.0518775 13.4948 0.42669 17.4948 2.92666C19.4277 4.13474 11.3195 1.9273 6.50209 2.70998C2.02968 3.4366 0.927895 4.15316 1.00358 3.65286Z' fill='%233449B7' stroke='%233449B7' stroke-width='0.5'/%3E%3C/svg%3E%0A");
-            position: absolute;
-            left: 0;
-            top: 2px;
-            line-height: 1;
-        }
-    }
-}
+
 .team-help{
     display: flex;
     align-items: center;
@@ -725,6 +714,7 @@
 .fly-box{
     position: sticky;
     top: 1rem;
+    max-width: 349px;
     padding: 3rem;
     background-color: var(--light);
     box-sizing: border-box;
@@ -738,5 +728,104 @@
     }
     .btn{
         margin-top: 3rem;
+    }
+}
+
+.thick-and-thin{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+    .thick-col{
+        font-size: 2rem;
+        font-weight: 600;
+        *:first-child{
+            margin-top: 0;
+        }
+        *:last-child{
+            margin-bottom: 0;
+        }
+        
+    }
+    .thin-col{
+        *:first-child{
+            margin-top: 0;
+        }
+        *:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.visual-link-grid{
+    display: grid;
+    grid-gap: 2rem;
+    &--four-col{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}  
+.visual-link{
+    position: relative;
+    aspect-ratio: 1.5/1;
+    overflow: hidden;
+    .visual-link__img{
+        display: block;
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        transition: var(--great-transition);
+        transform: scale(1);
+    }
+    .visual-link__text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        padding-right: 12%;
+        background-color: rgba(22, 22, 36, 0.4);
+        color: var(--light);
+        box-sizing: border-box;
+        transition: var(--great-transition);
+        .visual-link__title{
+            display: block;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        .visual-link__subtitle{
+            display: block;
+            margin-top: 4px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+    } 
+    &:hover{
+        .visual-link__img{
+            transform: scale(1.05);
+        }
+        .visual-link__text{
+            background-color: rgba(22, 22, 36, 0.7);
+        }
+    }
+    &--no-img{
+        .visual-link__text{
+            background-color: var(--bg-color);
+            color: var(--expert-color);
+        }
+        &:hover{
+            .visual-link__img{
+                transform: scale(1);
+            }
+            .visual-link__text{
+                color: var(--lawyer-color);
+                background-color: var(--bg-color);
+            }
+        }
     }
 }

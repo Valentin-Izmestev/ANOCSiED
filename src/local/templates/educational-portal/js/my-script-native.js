@@ -25,7 +25,7 @@ function ready(){
     });
     
        // элементы, при наведении на которые курсор становится синим
-    let lawyerStyleElements = document.querySelectorAll('.bat-lawyer, .breadcrumbs a');
+    let lawyerStyleElements = document.querySelectorAll('.bat-lawyer');
      
     lawyerStyleElements.forEach(item=>{
         item.addEventListener('mouseover', function(e){

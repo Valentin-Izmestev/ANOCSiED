@@ -79,3 +79,48 @@
     }
     
 }
+.big-questions-section{
+    .spoiler{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.type-of-expertise{
+    color: var(--dark);
+    padding-bottom: 2.5rem;
+    .expertise-type-box{
+        margin-bottom: 7.7rem;
+    } 
+    .team-help{
+        margin-top: 4rem; 
+    }
+    .thick-and-thin,
+    .team-help{
+        margin-bottom: 8rem;
+    } 
+}
+.questions-about-expertise{
+    padding-top: 2rem;
+    .form-panel--exp-questions {
+        .form-panel__decor-elem {
+            max-height: 571px;
+        }
+    }
+}
+
+.stroytech-expertise, 
+.electro-expertise,
+.fire-expertise{
+    .bedsheet{
+        margin-bottom: 8rem;
+    }
+    .visual-link-grid{
+        margin-bottom: 8rem;
+    }
+    .thick-and-thin{
+        margin-top: 8rem;
+    }
+}
+

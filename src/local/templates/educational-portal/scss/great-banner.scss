@@ -10,6 +10,10 @@
         background-color: var(--text-color);
         background-image: url(../img/darkness-bg.png);
     }
+    &--grey-style{
+        background-color: var(--light-dark);
+        background-image: url(../img/grey-style-bg.png);
+    }
     &--expert-style{
         background-image: url(../img/expert-banner-bg.png);
         .btn--light{
@@ -52,8 +56,7 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: contain; 
-        }
-        
+        } 
     }
     
     &--expert-course{  
@@ -120,6 +123,84 @@
             transform: translateY(50%);
         }
     }
+    &--question{
+        &::after{
+            content: "";
+            position: absolute;
+            width: 15.6%;
+            height: auto;
+            bottom: 49%;
+            right: 9%;
+            aspect-ratio: 120/149;
+            background-image: url(../img/questions.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+            transform: translateY(50%);
+        }
+    }
+    
+    &--loupe{  
+        &::after{
+            content: '';
+            position: absolute;
+            width: 38%;
+            height: auto;
+            bottom: 0;
+            right: 2%;
+            aspect-ratio: 1.37/1;
+            background-image: url(../img/loupe.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain; 
+        }
+    }
+    &--stroytech{  
+        &::after{
+            content: '';
+            position: absolute;
+            width: 20.7%;
+            height: auto;
+            bottom: 0;
+            right: 0;
+            aspect-ratio: 1/1.44;
+            background-image: url(../img/stroytech.png);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: contain; 
+        }
+    }
+    &--multitester{  
+        &::after{
+            content: "";
+            position: absolute;
+            width: 29.7%;
+            height: auto;
+            bottom: 0;
+            right: 3%;
+            aspect-ratio: 267/253;
+            background-image: url(../img/multitester.png);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: contain; 
+        }
+    }
+    &--fire-helmet{  
+        &::after{
+            content: "";
+            position: absolute;
+            width: 29.7%;
+            height: auto;
+            bottom: 49%;
+            right: 0;
+            aspect-ratio: 122/99;
+            background-image: url(../img/fire-helmet.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: contain; 
+            transform: translateY(50%);
+        }
+    }
     .great-banner__content{
         max-width: 788px;
         width: 60%;
@@ -158,10 +239,20 @@
         padding: 1rem;
     }
 }
-
+.fire-page-section{
+    .great-banner {
+        .page-title{
+            width: 80%;
+        }
+    }
+}
 
 //------------- media -------------------
-
+@media screen and (max-width: 1530px){
+    .great-banner--stroytech::after { 
+        width: 23.6%; 
+    }
+}
 @media screen and (max-width: 1400px){
     .great-banner--megafon::after { 
         width: 22.6%; 
@@ -182,6 +273,11 @@
         right: 7%; 
     }
 }
+@media screen and (max-width: 1234px){
+    .great-banner--stroytech::after { 
+        width: 29%; 
+    }
+}
 @media screen and (max-width: 1200px){
     .great-banner {
         .page-title {
@@ -193,6 +289,20 @@
         bottom: 0;
         right: -5%; 
     }
+    .great-banner--question::after { 
+        width: 21.6%; 
+        bottom: 49%;
+        right: 6%; 
+    }
+    .great-banner--loupe::after {  
+        right: 0%; 
+    }
+    .great-banner--stroytech::after {
+        width: 24.65%;
+    }
+    .great-banner--fire-helmet::after { 
+        width: 36%; 
+    }
 }
 @media screen and (max-width: 1100px){
     .great-banner--darkness::after { 
@@ -203,11 +313,21 @@
         width: 60%;
         right: -6%;
     }
-}
-@media screen and (max-width: 1100px){
     .great-banner--darkness::after {  
         width: 69.8%;
         right: -24%; 
+    }
+    .great-banner--stroytech::after {
+        width: 27%;
+    }
+    .great-banner--multitester::after { 
+        width: 34.7%; 
+        right: 1%; 
+    }
+} 
+@media screen and (max-width: 1035px){
+    .great-banner--stroytech::after {
+        width: 34.4%;
     }
 }
 @media screen and (max-width: 800px){
@@ -222,9 +342,21 @@
     .great-banner--video::after,
     .great-banner--expert-course::after,
     .great-banner--seal::after, 
-    .great-banner--megafon::after {  
+    .great-banner--megafon::after,
+    .great-banner--question::after,
+    .great-banner--loupe::after,
+    .great-banner--stroytech::after,
+    .great-banner--multitester::after,
+    .great-banner--fire-helmet::after  {  
         display: none;
     } 
+    .fire-page-section{
+        .great-banner {
+            .page-title{
+                width: 100%;
+            }
+        }
+    }
     .great-banner--video::after { 
         width: 25.6%; 
         right: 7%; 
@@ -239,7 +371,7 @@
 }
 @media screen and (max-width: 600px){
     .great-banner {
-        padding: 4rem 3rem 4.7rem 3rem;
+        padding: 4rem 4% 4.7rem 4%;
         .page-title {
             font-size: 4rem;
         }
@@ -262,5 +394,20 @@
 @media screen and (max-width: 480px){
     .great-banner .btn { 
         max-width: 100%; 
+    }
+}
+@media screen and (max-width: 450px){
+    .great-banner .page-title {
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: 390px){
+    .great-banner .page-title {
+        font-size: 3.2rem;
+    }
+}
+@media screen and (max-width: 380px){
+    .great-banner .page-title {
+        font-size: 3rem;
     }
 }
