@@ -102,7 +102,7 @@
         color: var(--expert-color);
     }
     &--upp{
-        border-top: 1.4rem;
+        padding-top: 1.4rem;
         text-transform: uppercase;
         font-weight: 700;
     }
@@ -989,7 +989,7 @@
 .file-list{
     li{
         &:not(:last-child){
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
     }
 }

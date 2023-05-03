@@ -3773,7 +3773,7 @@ ol li:before {
   color: var(--expert-color);
 }
 .btn--upp {
-  border-top: 1.4rem;
+  padding-top: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -4762,7 +4762,7 @@ ol li:before {
 }
 
 .file-list li:not(:last-child) {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .file-link {
