@@ -124,3 +124,16 @@
     }
 }
 
+.typical-violations-section,
+.legislative-framework{
+    .bedsheet{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+}
+.legislative-framework{
+    b{
+        font-weight: 700;
+    }
+}

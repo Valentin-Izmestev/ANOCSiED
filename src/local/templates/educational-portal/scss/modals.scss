@@ -84,6 +84,15 @@
             text-decoration: underline;
         }
     }
+    .form-elem-checkbox{
+        i{
+            border: 1px solid var(--bg-color); 
+        }
+        .form-elem-checkbox__caption{
+            font-size: 1.4rem;
+        }
+    }
+    
 }
  
 .modal-auth-reg{

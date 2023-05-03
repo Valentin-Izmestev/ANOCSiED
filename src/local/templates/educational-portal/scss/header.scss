@@ -140,30 +140,34 @@ nav{
 
 .user-panel{
     position: relative;
+    .user-menu{
+        position: absolute;
+        top: 115%;
+        right: 0;
+        transform: scaleY(0);
+        transition: var(--great-transition); 
+        transform-origin: center top;
+    }
     &:hover{
         .user-panel__btn{
             svg{
                 transform: scaleY(-1);
             }
         }
-        .user-panel__dropdown{
+        .user-menu{
             transform: scaleY(1);
         }
      
     }
 }
  
-.user-panel__dropdown{
-    position: absolute;
-    top: 115%;
-    right: 0;
+
+
+.user-menu{ 
     width: 100%;
     min-width: 20rem;
     background-color: var(--light);
-    z-index: 1;
-    transition: var(--great-transition);
-    transform: scaleY(0);
-    transform-origin: center top;
+    z-index: 1; 
     li{
          
         &:not(:last-child){
@@ -171,6 +175,7 @@ nav{
         }
         a{
             display: flex; 
+            align-items: center;
             font-size: 1.5rem;
             line-height: 1.1;
             padding: 2rem;
@@ -186,6 +191,21 @@ nav{
             svg{
                 margin-right: 1rem;
             }
+            .user-menu__notification-counter{
+                flex-shrink: 0;
+                margin-left: auto;
+                display: block;
+                min-width: 1.8rem;
+                min-height: 1.8rem;
+                border-radius: 50%;
+                padding: 3px;
+                font-size: 1.2rem;
+                line-height: 1.2rem;
+                text-align: center;
+                color: var(--light);
+                background-color: var(--expert-color);
+                box-sizing: border-box;
+            }
         }
         &:not(:last-child){
             a{
@@ -194,7 +214,7 @@ nav{
                         stroke: var(--text-color);
                     }
                 }
-                &:hover{
+                &:hover, &.active{
                     color: var(--expert-color);
                     
                     svg{
@@ -329,6 +349,7 @@ nav{
         max-width: 212px; 
         z-index: 110;
         img{
+            display: block;
             width: 100%;
             height: auto;
         }
@@ -605,6 +626,16 @@ nav{
         background-repeat: no-repeat;
         padding-left: 30px;
         font-size: 0;
+    }
+    .user-menu {
+        li {
+            a {
+                .user-menu__notification-counter { 
+                    min-width: 2rem;
+                    min-height: 2rem;   
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 435px){

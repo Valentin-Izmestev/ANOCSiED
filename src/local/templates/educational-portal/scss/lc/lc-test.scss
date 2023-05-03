@@ -1,0 +1,216 @@
+.test{
+    .test__item{ 
+        &:not(:first-child){
+            margin-top: 2rem;
+        }
+    }
+    
+}
+.test-item{
+    color: var(--dark);
+    .test-item__number{
+        display: block; 
+        font-size: 1.6rem;
+        line-height: 1.4;
+        font-weight: 600;
+        color: var(--expert-color);
+    }
+    .test-item__question{
+        display: block;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--bg-color);
+        font-size: 2rem;
+        line-height: 1.4;
+        font-weight: 600;
+        box-sizing: border-box;
+    } 
+    .form-elem-radio,
+    .form-elem-checkbox{
+        align-items: flex-start;
+        i{
+            position: relative;
+            top: 0.15rem;
+        }
+    }
+    .test__response-list{
+        margin-top: 2.5rem;
+    }
+    .form-elem-checkbox,
+    .form-elem-radio{
+        i{
+            &:hover{
+                border: 1px solid var(--lawyer-color);
+            }
+        }
+    }
+}
+
+.test-response-list{
+    li{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+.test-result{
+    margin-bottom: 3rem;
+    .test-result__title{
+        margin-bottom: 2rem;
+    }
+    .test-result__desc-box{
+        *{
+            &:not(first-child){
+                margin-top: 2rem;
+            }
+        }
+    }
+    .test-result__parametr {
+        margin-top: 4rem;
+    }
+}
+
+.test-result-parametr{
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--text-color);
+    .test-result-parametr__key{
+        display: block;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        font-weight: 600;
+    }   
+    .test-result-parametr__value{
+        margin-top: 1rem;
+        display: block;
+        font-size: 4rem;
+        line-height: 1;
+        font-weight: 700;
+        &--good-result{
+            color: var(--expert-color);
+        }
+        &--bed-result{
+            color: var(--alert-color);
+        }
+    }
+    li{
+        &:not(:last-child){
+            margin-right: 4%;
+        } 
+
+    }
+    
+}
+
+.test-feedback{
+    .test-feedback__title{
+        display: block;
+        margin-bottom: 4rem;
+    }
+    .test-feedback__list{
+
+    }
+}
+
+.test-feedback-list{
+    list-style-type: none;
+    .test-feedback-list__item{
+        border-bottom: 1px solid var(--bg-color);
+        &:first-child{
+            border-top: 1px solid var(--bg-color);
+        }
+    }
+}
+
+.test-feedback-list-item{
+    position: relative;
+    padding: 1.5rem 2rem 1.5rem 6.5rem;
+    box-sizing: border-box;
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 15px;
+        width: 6.5rem;
+        height: 2.4rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+    &--success{
+        &::before{
+            background-image: url(../img/success-marker.svg);
+        }
+    }
+    &--fiasco{
+        &::before{
+            background-image: url(../img/fiasco-marker.svg);
+        }
+    }
+}
+.test-feedback-list-item__number{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--expert-color);
+}
+.test-feedback-list-item__question{
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--dark);
+}
+.test-nav-footer{
+    margin-top: 3.5rem;
+    .btn{
+        &:not(:first-child){
+            margin-top: 2rem;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .test-result-parametr {
+        flex-direction: column;
+        li{
+            &:not(:last-child){
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+        }
+        .test-result-parametr__value {
+            margin-top: 1rem;
+            display: block;
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+    } 
+    .test-feedback-list-item{
+        padding-left: 4rem;
+        &::before{
+            width: 4rem;
+        }
+    }
+    .test-feedback {
+        .test-feedback__title {
+            display: block;
+            margin-bottom: 2rem;
+        }
+    }
+    .test-nav-footer{
+        margin-top: 3rem;
+        .btn{
+            &:not(:first-child){
+                margin-top: 1rem;
+            }
+        }
+    }
+}

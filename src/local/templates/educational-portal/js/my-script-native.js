@@ -5,13 +5,13 @@ function ready(){
     // поведение иконки мыши (курсора) BEGIN
     let bat = document.querySelector('.bat');  
 
-    // курсор становится оранжевым
+     
     document.addEventListener('mousemove', function(e){ 
         bat.style.transform = `translate(${e.clientX + 3}px, ${e.clientY + 3}px)`  
     });
 
     // элементы, при наведении на которые курсор становится оранжевым
-    let expertStyleElements = document.querySelectorAll('#header a, .btn--expert, .bat-expert, .form-panel-form a, .form-elem, .swiper-pagination, .scanbox, .sort-select-label, .course-card--expert, .review-card-header__decor-elem, .form-elem-checkbox i, .lg-oute'); 
+    let expertStyleElements = document.querySelectorAll('#header a, .btn--expert, .bat-expert, .form-panel-form a, .form-elem, .swiper-pagination, .scanbox, .sort-select-label, .course-card--expert, .review-card-header__decor-elem, .form-elem-checkbox i, .lg-oute, .my-course--expert .my-course__go-on svg'); 
  
     expertStyleElements.forEach(item=>{
         item.addEventListener('mouseover', function(e){
@@ -67,7 +67,39 @@ function ready(){
     arMenuLinks.forEach(item=>{
         item.insertAdjacentHTML('beforeEnd', addSvgUnderline(item.offsetWidth));
     });
-    //код отвечающий за добавление svg подчеркивания к нужным ссылкам END
+    //код отвечающий за добавление svg подчеркивания к нужным ссылкам  --END
+
+
+    let recomendationsSl = document.querySelector('.recomendations-slider');
+    if(recomendationsSl){
+        const swiper = new Swiper(recomendationsSl, {
+            // Optional parameters 
+            loop: true,
+            slidesPerView: 1, 
+            loop: true,
+            speed: 1000, 
+            loopAdditionalSlides: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 0,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+            // If we need pagination
+            pagination: {
+              el: '.recomendations-slider__conrtol-panel .swiper-pagination',
+              clickable: true,
+            },
+          
+            // Navigation arrows
+            navigation: {
+              nextEl: '.recomendations-slider__conrtol-panel .swiper-button-next',
+              prevEl: '.recomendations-slider__conrtol-panel .swiper-button-prev',
+            }
+           
+          }); 
+    }
+   
 
     let studentReviewsSlider = document.querySelector('.student-reviews-sl');
     if(studentReviewsSlider){
@@ -79,7 +111,11 @@ function ready(){
             speed: 1000, 
             loopAdditionalSlides: 2,
             slidesPerGroup: 1,
-             spaceBetween: 40,
+            spaceBetween: 40,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
             // If we need pagination
             pagination: {
               el: '.student-reviews-sl__conrtol-panel .swiper-pagination',
@@ -96,14 +132,6 @@ function ready(){
                     spaceBetween: 20,
                     slidesPerView: 2, 
                   },
-                // 600: {
-                //     slidesPerView: 2, 
-                //     slidesPerGroup: 2,
-                //   },
-                // 880: {
-                //     slidesPerView: 3, 
-                //     slidesPerGroup: 3,
-                // },
                 1000: {
                     spaceBetween: 20,
                     slidesPerView: 2,  
@@ -128,6 +156,10 @@ function ready(){
             loopAdditionalSlides: 3,
             slidesPerGroup: 1,
              spaceBetween: 40,
+             autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
             // If we need pagination
             pagination: {
               el: '.reviews-slider__conrtol-panel .swiper-pagination',
@@ -144,14 +176,6 @@ function ready(){
                     spaceBetween: 20,
                     slidesPerView: 2, 
                   },
-                // 600: {
-                //     slidesPerView: 2, 
-                //     slidesPerGroup: 2,
-                //   },
-                // 880: {
-                //     slidesPerView: 3, 
-                //     slidesPerGroup: 3,
-                // },
                 1000: {
                     spaceBetween: 20,
                     slidesPerView: 3,  
@@ -176,7 +200,10 @@ function ready(){
             loopAdditionalSlides: 2,
             slidesPerGroup: 1,
              spaceBetween: 30,
-            // If we need pagination
+             autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
             pagination: {
               el: '.scan-slider__conrtol-panel .swiper-pagination',
               clickable: true,
@@ -363,6 +390,58 @@ function ready(){
             });
         });
     }
-    
 
+
+    // Плавная прокрутка страницы при клике на яконую ссылку
+
+    let nlAnchorLinks = document.querySelectorAll('.anchor-menu a');
+    nlAnchorLinks.forEach(link=>{
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            let destination = document.querySelector(e.currentTarget.getAttribute('href'));
+            if(destination){
+                destination.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // поведение тултипа в столбчатом графике виджета прогресса прохождения курса
+    let nlAssingScopeBox = document.querySelectorAll('.progress-widget__passing-score');
+    console.log(nlAssingScopeBox)
+    if(nlAssingScopeBox){
+        nlAssingScopeBox.forEach(item=>{
+            item.addEventListener('mouseover', function(e){ 
+                item.classList.add('big-z');
+                let tooltyp = item.querySelector('.passing-score-tooltip');
+                let tooltypWidth = tooltyp.getBoundingClientRect().width;
+                let maxLeft = item.getBoundingClientRect().width - tooltypWidth;
+            
+                if((e.clientX - item.getBoundingClientRect().left) > maxLeft){
+                    tooltyp.style.left = (maxLeft - 50) + 'px';
+                }else{
+                    tooltyp.style.left = (e.clientX - item.getBoundingClientRect().left) - 15 + 'px';
+                } 
+               
+            });
+            item.addEventListener('mouseout', function(e){ 
+                item.classList.remove('big-z'); 
+            });
+        });
+    }
+
+    //поведение тега video в большом контейнере для видеороликов
+    let videoPlayBtn = document.querySelectorAll('.play-btn');
+    if(videoPlayBtn){
+        videoPlayBtn.forEach(btn=>{
+            btn.addEventListener('click', function(e){
+                this.closest('.great-video-box').classList.add('great-video-box--play');
+                let currentVideo = this.previousElementSibling;
+                currentVideo.setAttribute('controls', 'controls');
+                currentVideo.play();
+            });
+        });
+    }
 }

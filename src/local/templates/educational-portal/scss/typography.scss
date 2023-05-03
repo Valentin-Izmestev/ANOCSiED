@@ -72,3 +72,33 @@ a{
         }
     }
 }
+
+ol{ 
+	counter-reset: num;
+	margin: 0 0 0 35px;
+	padding: 15px 0 5px 0; 
+    li{  
+        position: relative;
+        // padding-left: 3rem;
+        margin: 0 0 0 0; 
+        font-size: inherit;
+        box-sizing: border-box;
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        } 
+        &:before {
+            content: counter(num) '.'; 
+            counter-increment: num;
+            display: inline-block;	
+            position: absolute;
+            font-weight: 600;
+            top: 0px;
+            left: -28px; 
+            width: auto;
+            color: var(--expert-color);
+            text-align: right;
+        }
+    }
+}
+ 
+ 

@@ -3,7 +3,7 @@
 
  @import 'plagins/swiper-bundle'; 
  @import 'plagins/lightgallery-bundle'; 
- @import 'plagins/choices'; 
+ @import 'plagins/choices';  
 
 
  @import 'elements/great-columns-box'; 
@@ -19,6 +19,13 @@
  @import 'footer'; 
  @import 'modals'; 
 
+ @import 'lc/lc-common'; 
+ @import 'lc/progress-widget'; 
+ @import 'lc/lc-test'; 
+ @import 'lc/lc-sections'; 
+ @import 'lc/lc-media'; 
+
+ 
  @import 'sections/sections'; 
  @import 'sections/hall-section'; 
  @import 'sections/advantages-section'; 

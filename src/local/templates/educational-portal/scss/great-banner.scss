@@ -65,7 +65,7 @@
             position: absolute;
             width: 42%;
             height: auto;
-            bottom: 0;
+            bottom: -1px;
             right: 0%;
             aspect-ratio: 1.33/1;
             background-image: url(../img/plan-helm.png);
@@ -195,6 +195,23 @@
             right: 0;
             aspect-ratio: 122/99;
             background-image: url(../img/fire-helmet.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: contain; 
+            transform: translateY(50%);
+        }
+    }
+    &--folder{  
+        &::after{
+            content: "";
+            position: absolute;
+            width: 29.7%;
+            max-width: 350px;
+            height: auto;
+            bottom: 49%;
+            right: 5%;
+            aspect-ratio: 1/1;
+            background-image: url(../img/folder.png);
             background-repeat: no-repeat;
             background-position: right center;
             background-size: contain; 
@@ -347,7 +364,8 @@
     .great-banner--loupe::after,
     .great-banner--stroytech::after,
     .great-banner--multitester::after,
-    .great-banner--fire-helmet::after  {  
+    .great-banner--fire-helmet::after,
+    .great-banner--folder::after  {  
         display: none;
     } 
     .fire-page-section{

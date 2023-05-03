@@ -1,0 +1,568 @@
+.lc-frame{
+    display: flex;
+    .lc-frame__left-col{
+        flex-shrink: 0;
+        min-width: 257px;
+        padding-right: 4rem;
+        box-sizing: border-box;
+        .my-course{
+            max-width: 34.8rem;
+            .my-course__type { 
+                padding: 0.6rem 0.84rem;
+            }
+            .my-course__progress-list { 
+                margin-bottom: 0.5rem;
+                font-size: 1.4rem; 
+            }
+            
+        }
+    }
+    .lc-frame__center-col{
+        position: relative;
+        flex-grow: 1; 
+        padding-right: 8px;
+        margin-right: -8px;
+        overflow: hidden;
+        .spoiler__header{ 
+            padding: 2.3rem 0;
+        } 
+        .spoiler__body{
+            &>*{
+                margin: 2rem 0;
+                &:first-child{
+                    margin-top: 0;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            .video-gallery { 
+                grid-gap: 2rem;
+            }
+            .video-box {
+                .video-box__container { 
+                    aspect-ratio: 1.82/1; 
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
+                .video-box__caption{
+                    margin-top: 1.5rem;
+                    font-size: 1.8rem;
+                    color: var(--text-color);
+                }
+            }
+            
+        }
+    }
+    .lc-frame__right-col{
+        flex-shrink: 0;
+        min-width: 38.7rem;
+        padding-left: 4rem;
+        box-sizing: border-box;
+        .fly-box{
+            max-width: 34.7rem;
+        }
+    }
+    .bedsheet{
+        padding: 4rem;
+        color: var(--dark);
+        b{
+            font-weight: 700;
+        }
+        .h3, 
+        .h4, 
+        h3, 
+        h4 {
+            margin: 3rem 0;
+        }
+        h5, .h5{
+            margin: 2rem 0;
+        }
+    }
+} 
+
+.lc-page-title{
+    margin-bottom: 3rem;
+    color: var(--dark);
+}
+
+.user-personal-data{
+    display: flex;
+    padding: 4rem;
+    margin-bottom: 4rem;
+    background-color: var(--light);
+    align-items: center;
+    box-sizing: border-box;
+    .user-personal-data__avatar{
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2rem;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        color: var(--light);
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 700;
+        text-align: center;
+        overflow: hidden;
+        &--expert{
+            background-color: var(--expert-color);
+        }
+        &--lawyer{
+            background-color: var(--lawyer-color);
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: center;
+            object-position: center;
+        }
+    }
+    .user-personal-data__name-box{
+        margin-right: 6%;
+    }
+    .user-personal-data__surname,
+    .user-personal-data__name{
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: var(--dark);
+        font-weight: 500;
+    }
+    .user-personal-data__surname{
+        display: block;
+    }
+    .user-personal-data__name{
+        display: block;
+    }
+    .change-password {
+        display: block;
+        font-size: 1.4rem;
+        margin-top: 2px;
+        line-height: 1.6;
+        color: var(--expert-color);
+        text-decoration: none;
+        transition: var(--great-transition);
+        &:hover{
+            color: var(--lawyer-color);
+        }
+    }
+    .user-personal-data__contact-box{
+        margin-left: 7%;
+    }
+}
+
+.user-personal-data-contact-box{
+    .user-personal-data-contact__key{
+        display: block;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        font-weight: 500;
+        color: var(--text-color-alt);
+    }
+    .user-personal-data-contact__value{
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        font-weight: 500;
+        color: var(--dark);
+        white-space: nowrap;
+    }
+}
+
+.lc-h4{
+    margin-bottom: 2rem;
+}
+
+
+.notification{
+    padding: 4rem;
+    background-color: var(--light);
+    box-sizing: border-box;
+    .notification__header{
+        display: flex; 
+        margin-bottom: 1rem;
+        .notification__date{
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1;
+            color: var(--expert-color);
+            white-space: nowrap;
+            margin-right: 1rem;
+        }
+        .notification__lantern-of-freshness{
+            display: block;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 50%;
+            background-color: var(--expert-color);
+            margin-left: auto;
+        }
+    }
+    
+    .notification__title{
+        margin-top: 0;
+        margin-bottom: 1rem;
+        max-width: 106.2rem;
+    }
+    .notification__text{
+        color: var(--dark);
+        max-width: 106.2rem;
+        *:not(:first-child){
+            margin-top: 1rem;
+        }
+    }
+}
+
+.my-course {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem;
+    background-color: var(--light);
+    color: var(--dark);
+    box-sizing: border-box;
+    .my-course__type {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        line-height: 1;
+        font-weight: 600;
+        color: var(--light);
+        padding: 0.8rem 1rem;
+    }
+    .my-course__title{
+        margin-bottom: 4rem;
+    }
+    .my-course__progress-box{
+        margin-top: auto;
+        width: 100%; 
+    }
+    .my-course__progress-list{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        li{
+            margin-bottom: 0.5rem;
+            &:not(:last-child){
+                margin-right: 2rem;
+            }
+        }
+        b{
+            font-weight: 700;
+        }
+    }
+    .my-course__progress-bar  {
+
+    }
+    .my-course__go-on{
+        display: flex; 
+        margin-top: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 1.6rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+        color: var(--black);
+        text-decoration: none;
+        svg{
+            margin-left: 1rem;
+            path{
+                transition: var(--great-transition);
+                fill: var(--text-color);
+            }
+        }
+    }
+    &--lawyer{
+        .my-course__type{
+            background-color: var(--lawyer-color);
+        }
+        .my-course-progress-bar{ 
+            .my-course-progress-bar__indicator{ 
+                background: repeating-linear-gradient(
+                -55deg,
+                #F69F13,
+                #F69F13 10px,
+                #F8AF3B 10px,
+                #F8AF3B 20px
+                );
+            }
+        }
+        .my-course__go-on{
+            svg:hover{
+                path{
+                    fill: var(--lawyer-color);
+                }
+            }
+        }
+    } 
+    &--expert{
+        .my-course__type{
+            background-color: var(--expert-color);
+        }
+        .my-course-progress-bar{ 
+            .my-course-progress-bar__indicator{ 
+                background: repeating-linear-gradient(
+                -55deg,
+                #3449B7,
+                #3449B7 10px,
+                #5768C3 10px,
+                #5768C3 20px
+                );
+            }
+        }
+        .my-course__go-on{
+            svg:hover{
+                path{
+                    fill: var(--expert-color);
+                }
+            }
+        }
+    }
+}
+ 
+.my-course-progress-bar{
+    position: relative;
+    height: 10px;
+    border-radius: 3px;
+    background-color: var(--bg-color);
+    width: 100%;
+    .my-course-progress-bar__indicator{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 3px;
+    }
+}
+
+
+.course-leaflet{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    padding: 5rem;
+    padding-right: 32%;
+    color: var(--light);
+    box-sizing: border-box;
+    .course-leaflet__title{
+        max-width: 68.5rem;
+        color: var(--light);
+    }
+    .course-leaflet__desctiption-box{
+        max-width: 68.5rem;
+        margin-top: 1.6rem;
+        margin-bottom: 2.5rem;
+        *{
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+        *:not(:first-child){
+            margin-top: 1rem;
+        }
+    }
+    .course-leaflet__parametr-list{
+        margin-top: auto;
+        display: flex;
+        .course-leaflet__parametr{
+            margin-bottom: 1.5rem;
+            &:not(:last-child){
+                margin-right: 7%;
+            }
+        }
+    }
+    
+    .btn{
+        margin-top: 1.5rem;
+        max-width: 14.5rem;
+    }
+    &--lawyer{
+        background-image: url(../img/lawyer-banner-bg.png);
+        .btn--light{
+            color: var(--lawyer-color);
+        }
+    } 
+    &--expert{
+        background-image: url(../img/expert-banner-bg.png);
+        .btn--light{
+            color: var(--expert-color);
+        }
+    }
+    &--femida{
+        &::after{
+            content: '';
+            position: absolute;
+            max-width: 400px;
+            width: 40%;
+            height: 94%;
+            right: 2%;
+            bottom: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center bottom;
+            background-image: url(../img/femida.png);
+        }
+    }
+    &--expert-course{
+        &::after{
+            content: '';
+            position: absolute;
+            max-width: 455px;
+            width: 36%;
+            height: 94%;
+            right: -2px;
+            bottom: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center bottom;
+            background-image: url(../img/plan-helm.png);
+        }
+    }
+} 
+
+.course-leaflet-parametr{  
+    .course-leaflet-parametr__key{
+        display: block;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1;
+        font-weight: 700;
+    }
+    .course-leaflet-parametr__value{
+        margin-top: 0.9rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+}
+.lc-control-panel{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    .link-back{
+        margin-right: 2rem;
+    }
+    .switch-checkbox-label{
+        margin-left: auto;
+    }
+}
+.link-back{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 1.1;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--great-transition);
+    svg{
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.8rem;
+        path{
+            fill: var(--text-color);
+            transition: var(--great-transition);
+        }
+    }
+    &:hover{
+        color: var(--lawyer-color);
+        svg{
+            path{
+                fill: var(--lawyer-color);
+            }
+        }
+    }
+}
+
+.test-bedsheet{
+    padding: 4rem;
+    background-color: var(--light);
+    box-sizing: border-box;
+}
+.test-hall {
+    color: var(--dark);
+    .test-hall__title{
+        margin-bottom: 4rem;
+    }
+    p{
+        margin: 1.5rem 0;
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+    .btn{
+        margin-top: 4rem;
+    }
+}
+.lesson-gallery{
+    display: grid;
+    grid-gap: 2rem;
+    .lesson-gallery__item{ 
+        display: block;
+        margin: 0 !important;
+        width: 100%;
+        aspect-ratio: 49/65;
+        border-radius: 4px;
+        object-fit: cover;
+        object-position: cenetr center;
+    }
+    &--two-col{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    &--tree-col{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.empty-box{
+    position: relative;
+    padding: 7rem;
+    background-color: var(--text-color);
+    background-image: url(../img/darkness-bg.png);
+    overflow: hidden;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -11%;
+        right: 2%;
+        width: 55%;
+        max-width: 62.9rem;
+        aspect-ratio: 1.16/1;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../img/justice-dark.png);
+    }
+    .empty-box__content{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        max-width: 54rem;
+        width: 55%;
+        color: var(--light);
+        h2{
+            margin-bottom: 2rem;
+            color: inherit;
+        }
+        p{
+            margin: 2rem 0;
+        }
+        .btn{
+            width: auto;
+            padding-right: 3.4rem;
+            padding-left: 3.4rem;
+        }
+        .btn--light{
+            margin-top: 6rem;
+            color: var(--dark);
+        }
+    }
+}

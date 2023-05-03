@@ -9,7 +9,7 @@
         padding-right: 4rem;
         box-sizing: border-box; 
     }
-    .gcb___right-col{
+    .gcb__right-col{
         width: 349px; 
         flex-shrink: 0;
         .inner-mobile{
@@ -19,5 +19,13 @@
             
         }
     } 
-
+    &--reverse{ 
+        .gcb__left-col{
+            padding-right: 0;
+            padding-left: 4rem;
+        }
+        .gcb__right-col{
+            order: -1;
+        }
+    }
 }

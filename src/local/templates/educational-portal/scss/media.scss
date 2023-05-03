@@ -12,6 +12,14 @@
             padding-right: 3rem;
         }
     }
+    .typical-violations-section{
+        .great-columns-box{  
+            .gcb__left-col{ 
+                padding-left: 3rem;
+                padding-right: 0;
+            }
+        }
+    }
 }
  @media screen and (max-width: 1240px){
     *{
@@ -49,8 +57,52 @@
         grid-template-columns: repeat(3,1fr);
         grid-gap: 3rem;
     }
+    .typical-violations-section,
+    .legislative-framework{
+        .great-columns-box{
+            flex-direction: column;
+            .gcb__right-col{
+                width: 100%;
+            }
+            .gcb__left-col{
+                max-width: 100%;
+                padding-left: 0;
+            }
+        }
+        .bedsheet{
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+    .anchor-menu{
+        padding: 3rem 0;
+        padding-left: 7%;
+        margin-bottom: 4rem;
+        box-sizing: border-box;
+        li{ 
+            padding: 0; 
+            padding-right: 3.5%;
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+                border-bottom: none;
+            }    
+            a{
+                font-size: 1.8rem;
+            }   
+            &::before{
+                width: auto;
+                height: auto;
+                opacity: 1;
+                visibility: visible;
+            }     
+        }
+    }
  }
  @media screen and (max-width: 1024px){
+    h1, .h1{
+        font-size: 5rem;
+    }
     h3, .h3{
         font-size: 2.7rem;
     }
@@ -108,6 +160,10 @@
     }
 }
 @media screen and (max-width: 800px) {
+    .h1, h1 {
+        font-size: 4rem;
+        line-height: 1.4; 
+    }
     .scanbox-gallery { 
         grid-template-columns: repeat(2,1fr);
         grid-gap: 3rem;
@@ -120,10 +176,17 @@
             margin-bottom: 3rem;
         }
     }
+    .anchor-menu{
+        padding-left: 40px;
+    }
 }
+// меняю тень элементов
 @media screen and (max-width: 700px){
     .bedsheet {
         padding: 3.5rem 4%;
+    }
+    .elem-shadow { 
+        box-shadow: 4px 8px 0 0 var(--shadow-color);
     }
 }
 // Меняю размер шрифта 
@@ -131,6 +194,10 @@
     :root {
         font-size: 8.5px;
     } 
+    .h1, h1 {
+        font-size: 3.5rem;
+        line-height: 1.2; 
+    }
     .section-header{
         margin-bottom: 3rem;
     }
@@ -149,7 +216,7 @@
             font-size: 12px;
         }
     }
-}
+} 
 @media screen and (max-width: 570px){
     #main{
         padding-bottom: 6rem;

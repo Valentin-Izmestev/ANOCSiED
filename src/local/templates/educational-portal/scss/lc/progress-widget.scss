@@ -1,0 +1,206 @@
+.progress-widget{
+    background-color: var(--light);
+    padding: 4rem;
+    box-sizing: border-box;
+    .progress-widget__container{ 
+        position: relative;
+        overflow: hidden;
+    }
+    .progress-widget__caption{
+        display: block; 
+        margin-bottom: 4rem;
+    }
+    .progress-widget__passing-score{
+        position: absolute;
+        left: 5rem; 
+        height: 1px; 
+        width: 100%;
+        background-color: var(--lawyer-color);
+        transition: var(--great-transition);  
+        z-index: 1; 
+        &.big-z{
+            z-index: 8;
+        }
+        .passing-score-tooltip{
+            position: absolute;
+            top: calc(100% + 1rem);
+            left: 0;
+            opacity: 0;
+            transition: var(--great-transition);  
+            z-index: 2;
+        }
+        &:hover{
+            background-color: var(--alert-color);
+            .passing-score-tooltip{
+                opacity: 1;
+            }
+        }
+    }
+    .progress-widget__body{
+        position:relative;
+        position: relative;
+        height: 34rem;
+        box-sizing: border-box;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 5rem; 
+            height: calc(100% + 1.6rem);
+            border-right: 1px solid  var(--bg-color);
+        }
+    }
+    .progress-widget__row{
+        position: relative;
+        border-bottom: 1px solid var(--bg-color);
+        height: 20%;
+        box-sizing: border-box;
+        &:first-child{
+            border-top: 1px solid var(--bg-color); 
+        }
+        &:last-child{
+            &::after{
+                content: '0';
+                position: absolute;
+                bottom: 0;
+                left: 0.6rem;
+                width: 3.3rem;
+                font-size: 1.2rem;
+                text-align: right;
+                line-height: 1.4;
+                font-weight: 600;
+                color: var(--text-color-alt); 
+            }
+        }
+    }
+    .progress-widget__y-asixs-unit{
+        position: absolute;
+        left: 0.6rem;
+        bottom: 100%;
+        width: 3.3rem;
+        font-size: 1.2rem;
+        text-align: right;
+        line-height: 1.4;
+        font-weight: 600;
+        color: var(--text-color-alt);
+    } 
+    .progress-widget__chart{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% - 5rem);
+        height: calc(100% + 3.7rem);
+        padding-bottom: 3.8rem;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+    .progress-widget-legend{
+        display: none;
+        margin-top: 4rem;
+    }
+}
+.progress-widget-x-axis{
+    display: flex;
+    margin-top: 1rem; 
+    .progress-widget-x-axis__caption{
+        font-size: 1.4rem;
+        line-height: 1.4;
+        color: var(--text-color);
+        font-weight: 600;
+        padding-left: 1.6rem;
+        box-sizing: border-box;
+    } 
+}
+.passing-score-tooltip{
+    max-width: 26.5rem;
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 1rem;
+        border-bottom: 1rem solid var(--bg-color);
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+    }
+}
+
+
+.chart-columns{ 
+    .chart-columns-column-box{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between; 
+        height: 100%;
+    }
+    .chart-columns__item{
+        margin: 0 0.5rem;
+        &:first-child{
+            margin-left: 1rem;
+        }
+        &:last-child{
+            margin-right: 1rem;
+        }
+    }
+}
+
+.chart-columns-item{
+    position: relative;
+    width: 1.4rem;
+    min-width: 0.8rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background-color: var(--expert-color);  
+    z-index: 2;
+    .chart-columns-item__caption{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: calc(100% + 1.4rem);
+        width: 100%; 
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        font-weight: 600;
+        line-height: 1.4;
+    }
+}
+
+.progress-widget-legend{
+    li{
+        display: flex;
+    }
+    .progress-widget-legend__key{
+        flex-shrink: 0;
+        display: flex; 
+         width: 4rem;
+         margin-right: 2rem;
+         .passing-score-exemple{
+            margin-top: 1.2rem;
+         }
+    }
+    .progress-widget-legend__value{
+        display: block;
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+}
+.passing-score-exemple{
+    width: 100%;
+    height: 2px; 
+    background-color: var(--lawyer-color);
+}
+
+
+@media screen and (max-width: 1024px){
+    .progress-widget{
+        .progress-widget-legend{
+            display: block;
+        }
+    }
+}

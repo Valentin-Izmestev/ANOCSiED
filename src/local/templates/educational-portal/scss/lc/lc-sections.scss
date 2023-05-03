@@ -1,0 +1,73 @@
+.lc-progress{
+    .progress-widget{ 
+        &:not(:last-of-type){
+            margin-bottom: 4rem;
+        }
+    }
+}
+.lc-notifications-section{
+    .notification{
+        margin-bottom: 2rem;
+    }
+}
+
+.lc-my-courses-section{
+    .my-courses-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 4rem;
+        margin-bottom: 4rem;
+    }
+}
+.lc-support-section{
+    .spoiler{
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+// ------------------------------------------
+@media screen and (max-width: 1100px){
+    .lc-support-section{
+        .lc-frame { 
+            flex-wrap: wrap;
+            .lc-frame__right-col{
+                margin-top: 4rem;
+                min-width: auto;
+                padding-left: 0;
+                width: 100%;
+                .fly-box{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+// пререстраиваю колоночный каркас
+@media screen and (max-width: 900px){
+    .lc-progress,
+    .lc-notifications-section,
+    .lc-my-courses-section,
+    .lc-support-section,
+    .lc-rules-section{
+        .lc-frame{
+            flex-wrap: wrap;
+            .lc-frame__left-col{
+                width: 100%;
+                padding: 0;
+                .user-menu{
+                    display: none;
+                }
+            } 
+            .lc-frame__center-col{
+                width: 100%;
+                padding-right: 0;
+                margin-right: 0;
+                overflow: visible;
+            }
+        }
+       
+    }
+}

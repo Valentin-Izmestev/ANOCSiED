@@ -2,7 +2,7 @@
 @@include('jquery.maskedinput.js');
 @@include('swiper-bundle.js');
 @@include('lightgallery.min.js');
-@@include('choices.min.js');
+@@include('choices.min.js'); 
 @@include('my-script-native.js');
 @@include('my-script-jquery.js');
 

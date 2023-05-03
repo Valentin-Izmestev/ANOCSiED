@@ -17,6 +17,7 @@ html{
     --bg-color: #F4F5FC; //bg 
     --light-dark: #9494AD;
     --alert-color: #E24D5F;
+    --success-color: #17BE28;
     --great-transition: all 200ms ease;
     
     --shadow-color: #D2D3DE;
@@ -65,6 +66,8 @@ body{
 .inner-mobile{
     max-width:1564px; padding: 0;
 }
+.inner-min{position:relative;  max-width:1040px; padding: 0 2rem;   margin:0 auto; box-sizing: border-box; } 
+
 h1, h2, h3, h4, h5, h6, p{display:block; margin:0; padding:0; font-weight:400;}
 .h1, .h2, .h3, .h4, .h5, .h6{margin:0; padding:0; float:none;}
 img, input, textarea, button, a{border:none; outline:none;}
