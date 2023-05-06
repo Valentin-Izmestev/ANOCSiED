@@ -377,8 +377,8 @@ function ready(){
     let bat = document.querySelector('.bat');  
 
      
-    document.addEventListener('mousemove', function(e){ 
-        bat.style.transform = `translate(${e.clientX + 3}px, ${e.clientY + 3}px)`  
+    document.addEventListener('mousemove', function(e){  
+        bat.style.transform = `translate(${e.clientX + 3}px, ${e.clientY + 3}px)`; 
     });
 
     // элементы, при наведении на которые курсор становится оранжевым
