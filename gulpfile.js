@@ -1,41 +1,41 @@
 
 // -------------------------------------------------------------------------------------------------
-let project_folder = "dist";
-let source_folder = "src";
+let project_folder = "public/local/templates/educational-portal/assets";
+let source_folder = "assets";
 //Объект с путями
 let path = {
     //готовый результат
     build:{
         html: project_folder +"/",
-        css: project_folder + "/local/templates/educational-portal/assets/css/",
-        js: project_folder +"/local/templates/educational-portal/assets/js/",
-        img: project_folder +"/local/templates/educational-portal/assets/img/",
-        image: project_folder +"/local/templates/educational-portal/assets/image/",
-        video: project_folder +"/local/templates/educational-portal/assets/video/",
-        fonts: project_folder +"/local/templates/educational-portal/assets/fonts/"
+        css: project_folder + "/css/",
+        js: project_folder +"/js/",
+        img: project_folder +"/img/",
+        image: project_folder +"/image/",
+        video: project_folder +"/video/",
+        fonts: project_folder +"/fonts/"
     },
     //исходники
     src:{ 
         html: [source_folder +"/*.html", "!" + source_folder +"/_*.html"],
-        scss: source_folder +"/local/templates/educational-portal/assets/scss/style.scss",
-        js: source_folder +"/local/templates/educational-portal/assets/js/script.js",
-        img: source_folder +"/local/templates/educational-portal/assets/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        image: source_folder +"/local/templates/educational-portal/assets/image/**/*.{jpg,png,svg,gif,ico,webp}",
-        video: source_folder +"/local/templates/educational-portal/assets/video/**/*.{mp4,ogv,webm}",
-        fonts: source_folder + "/local/templates/educational-portal/assets/fonts/**/*.{eot,ttf,woff,woff2,svg}"
+        scss: source_folder +"/local/templates/educational-portal/scss/style.scss",
+        js: source_folder +"/local/templates/educational-portal/js/script.js",
+        img: source_folder +"/local/templates/educational-portal/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        image: source_folder +"/local/templates/educational-portal/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        video: source_folder +"/local/templates/educational-portal/video/**/*.{mp4,ogv,webm}",
+        fonts: source_folder + "/local/templates/educational-portal/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // пути папок за которыми нужно будет следить
     watch:{
         html: source_folder +"/**/*.html",
-        scss: source_folder +"/local/templates/educational-portal/assets/scss/**/*.scss",
-        js: source_folder +"/local/templates/educational-portal/assets/js/**/*.js",
-        img: source_folder +"/local/templates/educational-portal/assets/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        image: source_folder +"/local/templates/educational-portal/assets/image/**/*.{jpg,png,svg,gif,ico,webp}",
-        video: source_folder +"/local/templates/educational-portal/assets/video/**/*.{mp4,ogv,webm}",
-        fonts: source_folder + "/local/templates/educational-portal/assets/fonts/**/*.{eot,ttf,woff,woff2,svg}"
+        scss: source_folder +"/local/templates/educational-portal/scss/**/*.scss",
+        js: source_folder +"/local/templates/educational-portal/js/**/*.js",
+        img: source_folder +"/local/templates/educational-portal/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        image: source_folder +"/local/templates/educational-portal/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        video: source_folder +"/local/templates/educational-portal/video/**/*.{mp4,ogv,webm}",
+        fonts: source_folder + "/local/templates/educational-portal/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // путь к папке, которая будет чиститься при сохранении
-    clean: "./" + project_folder + "/local/templates/educational-portal/assets/"
+    clean: "./" + project_folder + "/"
 }
 
 // -------------------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ function browserSync(params){
 }
 
 gulp.task('svgSprite', function(){ 
-    return gulp.src('src/local/templates/educational-portal/img/for-svg-icon/*.svg')
+    return gulp.src(source_folder+'/local/templates/educational-portal/img/for-svg-icon/*.svg')
         .pipe(svgSprite({
             mode:{
                 stack:{
@@ -134,7 +134,7 @@ gulp.task('svgSprite', function(){
                 }
             }
         }))
-        .pipe(dest('src/local/templates/educational-portal/img/'))
+        .pipe(dest(source_folder+'/local/templates/educational-portal/img/'))
 });
 
 function watchFiles(params){
@@ -153,11 +153,12 @@ function clean(){
     return del(path.clean); 
 }
 
-let build = gulp.series(clean, gulp.parallel(fonts, styles, scripts, img, image, video ));// указываем, какие функции должны выполняться gulp-ом
+// let build = gulp.series(clean, gulp.parallel(fonts, styles, html,  scripts, img, image, video ));// указываем, какие функции должны выполняться gulp-ом
+let build = gulp.series(clean, gulp.parallel(fonts, styles,  scripts, img, image, video ));// указываем, какие функции должны выполняться gulp-ом
 let watch = gulp.parallel(build, watchFiles, browserSync);//фукции которые будут выполняться при прослушивании
 
 // экспортируем переменные и функции в gulp
-// exports.html    = html; 
+// exports.html    = html;
 exports.css     = styles;
 exports.scripts = scripts;
 exports.fonts   = fonts;
@@ -165,5 +166,5 @@ exports.img     = img;
 exports.image   = image;
 exports.video   = video;
 exports.build   = build;
-exports.watch   = watch;
-exports.default = watch;
+// exports.watch   = watch;
+exports.default = build;
