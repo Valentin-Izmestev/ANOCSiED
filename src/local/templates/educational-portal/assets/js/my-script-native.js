@@ -395,8 +395,7 @@ function ready(){
     });
 
     // поведение тултипа в столбчатом графике виджета прогресса прохождения курса
-    let nlAssingScopeBox = document.querySelectorAll('.progress-widget__passing-score');
-    console.log(nlAssingScopeBox)
+    let nlAssingScopeBox = document.querySelectorAll('.progress-widget__passing-score'); 
     if(nlAssingScopeBox){
         nlAssingScopeBox.forEach(item=>{
             item.addEventListener('mouseover', function(e){ 
