@@ -7,35 +7,35 @@ let path = {
     //готовый результат
     build:{
         html: project_folder +"/",
-        css: project_folder + "/local/templates/educational-portal/css/",
-        js: project_folder +"/local/templates/educational-portal/js/",
-        img: project_folder +"/local/templates/educational-portal/img/",
-        image: project_folder +"/local/templates/educational-portal/image/",
-        video: project_folder +"/local/templates/educational-portal/video/",
-        fonts: project_folder +"/local/templates/educational-portal/fonts/"
+        css: project_folder + "/local/templates/educational-portal/assets/css/",
+        js: project_folder +"/local/templates/educational-portal/assets/js/",
+        img: project_folder +"/local/templates/educational-portal/assets/img/",
+        image: project_folder +"/local/templates/educational-portal/assets/image/",
+        video: project_folder +"/local/templates/educational-portal/assets/video/",
+        fonts: project_folder +"/local/templates/educational-portal/assets/fonts/"
     },
     //исходники
     src:{ 
         html: [source_folder +"/*.html", "!" + source_folder +"/_*.html"],
-        scss: source_folder +"/local/templates/educational-portal/scss/style.scss",
-        js: source_folder +"/local/templates/educational-portal/js/script.js",
-        img: source_folder +"/local/templates/educational-portal/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        image: source_folder +"/local/templates/educational-portal/image/**/*.{jpg,png,svg,gif,ico,webp}",
-        video: source_folder +"/local/templates/educational-portal/video/**/*.{mp4,ogv,webm}",
-        fonts: source_folder + "/local/templates/educational-portal/fonts/**/*.{eot,ttf,woff,woff2,svg}"
+        scss: source_folder +"/local/templates/educational-portal/assets/scss/style.scss",
+        js: source_folder +"/local/templates/educational-portal/assets/js/script.js",
+        img: source_folder +"/local/templates/educational-portal/assets/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        image: source_folder +"/local/templates/educational-portal/assets/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        video: source_folder +"/local/templates/educational-portal/assets/video/**/*.{mp4,ogv,webm}",
+        fonts: source_folder + "/local/templates/educational-portal/assets/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // пути папок за которыми нужно будет следить
     watch:{
         html: source_folder +"/**/*.html",
-        scss: source_folder +"/local/templates/educational-portal/scss/**/*.scss",
-        js: source_folder +"/local/templates/educational-portal/js/**/*.js",
-        img: source_folder +"/local/templates/educational-portal/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        image: source_folder +"/local/templates/educational-portal/image/**/*.{jpg,png,svg,gif,ico,webp}",
-        video: source_folder +"/local/templates/educational-portal/video/**/*.{mp4,ogv,webm}",
-        fonts: source_folder + "/local/templates/educational-portal/fonts/**/*.{eot,ttf,woff,woff2,svg}"
+        scss: source_folder +"/local/templates/educational-portal/assets/scss/**/*.scss",
+        js: source_folder +"/local/templates/educational-portal/assets/js/**/*.js",
+        img: source_folder +"/local/templates/educational-portal/assets/img/**/*.{jpg,png,svg,gif,ico,webp}",
+        image: source_folder +"/local/templates/educational-portal/assets/image/**/*.{jpg,png,svg,gif,ico,webp}",
+        video: source_folder +"/local/templates/educational-portal/assets/video/**/*.{mp4,ogv,webm}",
+        fonts: source_folder + "/local/templates/educational-portal/assets/fonts/**/*.{eot,ttf,woff,woff2,svg}"
     },
     // путь к папке, которая будет чиститься при сохранении
-    clean: "./" + project_folder + "/"
+    clean: "./" + project_folder + "/local/templates/educational-portal/assets/"
 }
 
 // -------------------------------------------------------------------------------------------------
@@ -153,11 +153,11 @@ function clean(){
     return del(path.clean); 
 }
 
-let build = gulp.series(clean, gulp.parallel(fonts, styles, html,  scripts, img, image, video ));// указываем, какие функции должны выполняться gulp-ом
+let build = gulp.series(clean, gulp.parallel(fonts, styles, scripts, img, image, video ));// указываем, какие функции должны выполняться gulp-ом
 let watch = gulp.parallel(build, watchFiles, browserSync);//фукции которые будут выполняться при прослушивании
 
 // экспортируем переменные и функции в gulp
-exports.html    = html; 
+// exports.html    = html; 
 exports.css     = styles;
 exports.scripts = scripts;
 exports.fonts   = fonts;
