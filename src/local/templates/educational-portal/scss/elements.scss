@@ -172,7 +172,7 @@
     &:hover{
         text-decoration: none;
     }
-    &[disabled="disabled"]{
+    &--disabled{
         opacity: 0.6;
         &:active{
             transform: scale(1);

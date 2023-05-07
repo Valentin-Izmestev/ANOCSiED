@@ -320,21 +320,7 @@ function ready(){
         });
     }
 
-    // активатор кнопок в модалке
-    let nlCheckboxActivators = document.querySelectorAll('.checkbox-activator');
-    if(nlCheckboxActivators){
-        nlCheckboxActivators.forEach(item=>{
-            item.addEventListener('click', function(){
-                let modal = item.closest('.modal');
-                let activatedElement = modal.querySelector('.' + item.getAttribute('data-activate'));
-                if(item.checked){ 
-                    activatedElement.removeAttribute('disabled');
-                }else{
-                    activatedElement.setAttribute('disabled', 'disabled');
-                }
-            });
-        });
-    }
+    
 
     // работа модальных окон
     // great-shadow--show 

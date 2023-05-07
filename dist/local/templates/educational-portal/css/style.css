@@ -3848,10 +3848,10 @@ ol li:before {
 .btn:hover {
   text-decoration: none;
 }
-.btn[disabled=disabled] {
+.btn--disabled {
   opacity: 0.6;
 }
-.btn[disabled=disabled]:active {
+.btn--disabled:active {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
@@ -5579,6 +5579,9 @@ ol li:before {
   top: 28%;
   font-size: 11px;
 }
+.form-elem .form-elem__input--error {
+  background-color: rgba(226, 77, 94, 0.3);
+}
 .form-elem.form-elem--textarea span {
   top: 2.8rem;
 }
@@ -6140,6 +6143,14 @@ ol li:before {
 }
 .switch-checkbox:hover i {
   background-color: var(--lawyer-color);
+}
+
+.form-error-box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--alert-color);
 }
 
 @media screen and (max-width: 1320) {
@@ -7345,7 +7356,10 @@ nav {
   font-size: 1.4rem;
 }
 .modal .modal__caption {
-  margin-bottom: 3.6rem;
+  margin-bottom: 2rem;
+}
+.modal .form-error-box {
+  margin-bottom: 1.6rem;
 }
 .modal button[type=submit] {
   margin-top: 4rem;

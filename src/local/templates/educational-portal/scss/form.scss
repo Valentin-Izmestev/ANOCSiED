@@ -53,7 +53,11 @@
                font-size: 11px;
             }
         }
+        &--error{
+            background-color: rgba(226, 77, 94, 0.3);
+        }
     }
+ 
     &.form-elem--textarea{
         span{
             top: 2.8rem;
@@ -670,9 +674,14 @@
         }
     }
 }
-
+.form-error-box{   
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: var(--alert-color);
+}
 // ----------------------------------
-// ----------------mediaa----------------------
+// ----------------media----------------------
 
 @media screen and (max-width: 1320){
     .form-panel {
