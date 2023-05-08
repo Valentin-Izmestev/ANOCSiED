@@ -5979,7 +5979,7 @@ ol li:before {
   margin: 0;
   position: absolute;
   right: 0;
-  top: 7px;
+  top: 0.9rem;
   pointer-events: none;
   -webkit-transform-origin: center center;
       -ms-transform-origin: center center;
@@ -7391,6 +7391,13 @@ nav {
   margin-top: 4rem;
   text-align: center;
   font-size: 1.6rem;
+}
+
+#modal-student-review .modal {
+  max-width: 72rem;
+}
+#modal-student-review .lonely-textarea {
+  height: 36rem;
 }
 
 .lc-frame {
@@ -9545,6 +9552,14 @@ nav {
 }
 .courses-catalog-filter .sort-select-label {
   margin-left: auto;
+}
+.courses-catalog-filter .sort-select-label .choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .course-card {

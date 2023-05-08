@@ -711,8 +711,7 @@ function ready(){
         }, 200);
     }
     function hideModalFull(){
-        nlModalsWr.forEach(item=>{
-            console.log(item)
+        nlModalsWr.forEach(item=>{ 
             item.classList.remove('active');
         });
         setTimeout(function(){
@@ -729,7 +728,8 @@ function ready(){
     let nlOpenModalBtn = document.querySelectorAll('.open-modal');
     if(nlOpenModalBtn){
         nlOpenModalBtn.forEach(item=>{
-            item.addEventListener('click', function(){ 
+            item.addEventListener('click', function(e){ 
+                e.preventDefault();
                 showModalFull(item.getAttribute('data-modal-id'));
             });
         });
@@ -751,7 +751,7 @@ function ready(){
 
     // Плавная прокрутка страницы при клике на яконую ссылку
 
-    let nlAnchorLinks = document.querySelectorAll('.anchor-menu a');
+    let nlAnchorLinks = document.querySelectorAll('.anchor-menu a, .anchor-link');
     nlAnchorLinks.forEach(link=>{
         link.addEventListener('click', function(e){
             e.preventDefault();

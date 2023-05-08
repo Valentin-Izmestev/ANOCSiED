@@ -9,7 +9,7 @@
 
 	<!--   Cascading Style Sheets-->
 	<!-- <link rel="stylesheet" href="css/style.css">  -->
-	<link rel="stylesheet" href="./local/templates/educational-portal/css/style.min.css">
+	<link rel="stylesheet" href="./local/templates/educational-portal/assets/css/style.min.css">
 
 </head>
 
@@ -624,7 +624,7 @@
                     <input type="email" class="form-elem__input" name="email" placeholder="Электронная почта*" pattern="^\S+@\S+\.\S+$" required="required">
                     <span>Электронная почта*</span>
                 </label> 
-                <button type="submit" class="btn-submit btn btn--lawyer btn--upp btn--disabled">Восстановить пароль</button> 
+                <button type="submit" class="btn-submit btn btn--lawyer btn--upp">Восстановить пароль</button> 
             </form>
         </div>
     </div>
@@ -706,7 +706,20 @@
             </div>
         </div>
     </div>
-
+    <div class="modal-wr" id="modal-student-review">
+        <!-- модальное окно авторизации -->
+        <div class="modal  bat-lawyer">
+            <!-- modal-auth-reg -->
+            <form name="student-review-form" class="student-review-form">
+                <h2 class="h4 modal__caption">
+                    Оставить отзыв о курсе
+                </h2> 
+                <textarea name="textarea-resp" class="lonely-textarea"></textarea>
+                <button type="submit" class="btn-submit btn btn--lawyer btn--upp">Отправить</button> 
+            </form>
+        </div>
+    </div>
+    
 </div>
 	</div>
 
@@ -714,7 +727,7 @@
 	<!-- ++++++++++JavaScript++++++++++-->
 	<!-- <script type="text/javascript" src="js/jquery-1.12.1.js"></script> -->
 	<!-- <script type="text/javascript" src="./local/templates/lka/js/script.min.js"></script> -->
-	<script src="./local/templates/educational-portal/js/script.js"></script>
+	<script src="./local/templates/educational-portal/assets/js/script.js"></script>
 	<!-- ++++++++++JavaScript end++++++++++-->
 </body>
 

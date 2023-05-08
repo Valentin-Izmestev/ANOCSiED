@@ -29,6 +29,10 @@
     
     .sort-select-label{
         margin-left: auto;
+        .choices{
+            display: flex;
+            align-items: center;
+        }
     }
 }
 .course-card{
