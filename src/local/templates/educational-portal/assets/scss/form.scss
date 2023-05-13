@@ -853,3 +853,20 @@
         margin-top: 2rem;
     }
 }
+
+.upload-file-form{
+    input[type="file"]{
+        display: none;
+    }
+    .btn-file--upload{
+        display: none;
+    }
+    .file-list{
+        li{ 
+            margin-top: 2rem;
+        }
+        li:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
+}

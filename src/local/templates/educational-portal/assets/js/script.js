@@ -6,5 +6,6 @@
 @@include('my-script-native.js');
 @@include('my-script-jquery.js');
 @@include('from-validator.js');
+@@include('fileuploader.js');
 
 

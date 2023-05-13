@@ -28,13 +28,29 @@
         } 
         .spoiler__body{
             &>*{
-                margin: 2rem 0;
+                margin: 3rem 0;
                 &:first-child{
                     margin-top: 0;
                 }
                 &:last-child{
                     margin-bottom: 0;
                 }
+            }
+            h1, .h1,
+            h2, .h2,
+            h3, .h3,
+            h4, .h4,
+            h5, .h5{
+                display: block;
+                margin-top: 3rem;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+            a.btn{
+                min-height: 6rem;
+                margin-top: 3rem;
+                font-size: 1.6rem; 
             }
             .video-gallery { 
                 grid-gap: 2rem;
@@ -51,7 +67,9 @@
                     color: var(--text-color);
                 }
             }
-            
+            .upload-file-form{
+                margin-top: 3rem;
+            }
         }
     }
     .lc-frame__right-col{

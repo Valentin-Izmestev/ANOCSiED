@@ -216,6 +216,10 @@
             font-size: 12px;
         }
     }
+    .spoiler .btn-box--active { 
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 1rem;
+    }
 } 
 @media screen and (max-width: 570px){
     #main{
@@ -299,6 +303,12 @@
     .scanbox-gallery { 
         grid-template-columns: repeat(1,1fr);
         grid-gap: 3rem;
+    }
+    .spoiler .btn-box--active { 
+        grid-template-columns: repeat(1,1fr); 
+    }
+    .lesson-spoiler .spoiler__header>.spoiler-header__chicken-icon { 
+        margin-right: 1.1rem; 
     }
 }
 @media screen and (max-width: 350px){
