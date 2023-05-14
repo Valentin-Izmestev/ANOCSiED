@@ -434,8 +434,12 @@ function ready() {
     }
 
     let arMenuLinks = document.querySelectorAll('.main-menu a');
+    let nlLinkFromMyCourseFooterText = document.querySelectorAll('.my-course__footer-text a');
 
     arMenuLinks.forEach(item => {
+        item.insertAdjacentHTML('beforeEnd', addSvgUnderline(item.offsetWidth));
+    });
+    nlLinkFromMyCourseFooterText.forEach(item => {
         item.insertAdjacentHTML('beforeEnd', addSvgUnderline(item.offsetWidth));
     });
     //код отвечающий за добавление svg подчеркивания к нужным ссылкам  --END
@@ -890,12 +894,12 @@ let nlBtnSubmit = document.querySelectorAll('.btn-submit');
 
 let authForm = document.querySelector('.auth-form');
 
-authForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    let formData = new FormData(this);
-    console.log(Array.from(formData));
-    console.log(window.__token);
-});
+// authForm.addEventListener('submit', function(e){
+//     e.preventDefault();
+//     let formData = new FormData(this);
+//     console.log(Array.from(formData));
+//     console.log(window.__token);
+// });
  class FileUploader {
 
      constructor(form) {
@@ -979,42 +983,14 @@ authForm.addEventListener('submit', function(e){
          });
 
          //отправка файлов на сервер
-         this.form.addEventListener('submit', (e)=>{
-            e.preventDefault();
-            console.log(this.arFiles)
-         });
+        //  this.form.addEventListener('submit', (e)=>{
+        //     e.preventDefault();
+        //     console.log(this.arFiles)
+        //  });
 
      }
 
  }
-
-
- // загрузка файлов
-
- //  let uploadFileInput = document.querySelectorAll('.upload-file-form input');
- //  
- //  let fileOpenBtn = document.querySelectorAll('.btn-file--open');
- //  let fileUploadBtn = document.querySelectorAll('.btn-file--upload');
-
- //  let arFiles = [];
-
- // открытие окна выбора файлов
- //  if (fileOpenBtn) {
- //      fileOpenBtn.forEach(btn => {
- //          btn.addEventListener('click', function () {
- //              let fileInput = this.previousElementSibling;
- //              fileInput.click();
- //          })
- //      });
- //  }
- // выбор файлов для отправки на сервер
-
-
- //отправка файлов на сервер
- //  if(fileUploadBtn){
- //      fileUploadBtn.forEach(btn=>{
- //          console.log(arFiles)
- //      })
- //  };
+;
 
 

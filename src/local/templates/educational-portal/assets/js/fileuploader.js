@@ -81,40 +81,11 @@
          });
 
          //отправка файлов на сервер
-         this.form.addEventListener('submit', (e)=>{
-            e.preventDefault();
-            console.log(this.arFiles)
-         });
+        //  this.form.addEventListener('submit', (e)=>{
+        //     e.preventDefault();
+        //     console.log(this.arFiles)
+        //  });
 
      }
 
  }
-
-
- // загрузка файлов
-
- //  let uploadFileInput = document.querySelectorAll('.upload-file-form input');
- //  
- //  let fileOpenBtn = document.querySelectorAll('.btn-file--open');
- //  let fileUploadBtn = document.querySelectorAll('.btn-file--upload');
-
- //  let arFiles = [];
-
- // открытие окна выбора файлов
- //  if (fileOpenBtn) {
- //      fileOpenBtn.forEach(btn => {
- //          btn.addEventListener('click', function () {
- //              let fileInput = this.previousElementSibling;
- //              fileInput.click();
- //          })
- //      });
- //  }
- // выбор файлов для отправки на сервер
-
-
- //отправка файлов на сервер
- //  if(fileUploadBtn){
- //      fileUploadBtn.forEach(btn=>{
- //          console.log(arFiles)
- //      })
- //  }

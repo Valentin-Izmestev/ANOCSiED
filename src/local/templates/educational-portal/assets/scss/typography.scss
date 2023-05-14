@@ -37,6 +37,9 @@ a{
         text-decoration: none;
     }
 }
+.alert-color{
+    color: var(--alert-color);
+}
 .streak-marker{
     li{
         position: relative;

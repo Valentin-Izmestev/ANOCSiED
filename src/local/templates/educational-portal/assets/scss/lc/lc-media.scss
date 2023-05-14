@@ -81,12 +81,7 @@
         }
     }
 }
-@media screen and (max-width: 900px){
-    .lc-my-courses-section .my-courses-box { 
-        grid-template-columns: repeat(2,1fr); 
-        grid-gap: 2rem;
-    }
-}
+
 @media screen and (max-width: 850px){
     .empty-box::after { 
         bottom: -6%;
@@ -177,6 +172,11 @@
         grid-template-columns: repeat(2,1fr);
     }
 }
+@media screen and (max-width: 500px){
+    .course-paremeters { 
+        gap: 2rem;
+    }
+}
 @media screen and (max-width: 495px){
     .empty-box{
         .empty-box__content {
@@ -189,6 +189,35 @@
         
         &::after {
             display: none;
+        }
+    }
+}
+@media screen and (max-width: 440px){
+ 
+    .my-course {
+        .my-course__footer{
+            flex-direction: column;
+            align-items: flex-start;
+            .btn--to-pay { 
+                max-width: 100%; 
+            }
+        }
+        .my-course__footer-text { 
+            line-height: 1.6; 
+            a {
+                svg {
+                    position: absolute;
+                    top: 90%;
+                    left: 0;
+                }
+            }
+        }
+    } 
+    .course-paremeters { 
+        flex-direction: column;
+        gap: 2rem;
+        li{
+            width: 100%;
         }
     }
 }

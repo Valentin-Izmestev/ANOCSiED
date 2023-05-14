@@ -240,6 +240,74 @@
         }
     }
 }
+.course-paremeters{
+    display: flex;
+    gap: 4rem;
+    li{
+
+    }
+    .course-paremeters__key{
+        display: block; 
+        font-size: 1.1rem;
+        line-height: 1;
+        font-weight: 600;
+        color: var(--light-dark);
+        text-transform: uppercase;
+    }
+    .course-paremeters__value{
+        display: block;
+        margin-top: 0.8rem;
+        font-size: 1.8rem;
+        line-height: 1.22;
+        color: var(--dark);
+        font-weight: 600;
+    }
+}
+
+.my-course-continue{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .my-course-continue__caption{
+        display: block;
+        margin-right: 1rem;
+        font-size: 1.6;
+        line-height: 1.4;
+        color: var(--dark);
+        font-weight: 500;
+    }
+    .my-course-continue__link{ 
+        flex-shrink: 0;
+        margin-left: auto;
+        width: 3.5rem;
+        height: 3.5rem;
+        mask: url(../img/arrou-right-icon.svg) no-repeat center center;
+        mask-size: contain;
+        background-color: var(--text-color);
+        font-size: 0;
+        transition: var(--great-transition);
+        &:hover{
+            background-color: var(--lawyer-color);
+        }
+    }
+}
+.countdown{
+    .countdown__key{
+        display: block;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        color: var(--text-color); 
+    }
+    .countdown__value{
+        display: block;
+        margin-top: 0.8rem;
+        font-size: 2.4rem;
+        line-height: 1.22;
+        font-weight: 600;
+        color: var(--expert-color);
+    }
+}
+
 
 .my-course {
     display: flex;
@@ -249,20 +317,70 @@
     background-color: var(--light);
     color: var(--dark);
     box-sizing: border-box;
-    .my-course__type {
+    .my-course__header{
+        display: flex;
+        width: 100%;
+        gap: 5px;
         margin-bottom: 1rem;
+        .my-course__status{
+            margin-left: auto;
+        }
+    }
+    .my-course__status{ 
+        font-size: 1.4rem;
+        line-height: 1;
+        font-weight: 600; 
+        padding: 0.8rem 1rem;
+        box-sizing: border-box;
+        &--success{
+            color: var(--success-color);
+            background-color: rgba(23, 190, 40, 0.1);
+        }
+        &--alert{
+            color: var(--alert-color);
+            background-color: rgba(246, 20, 20, 0.1);
+        }
+        &--normal{
+            color: var(--expert-color);
+            background-color: var(--bg-color);
+        }
+        &--expectation{
+            color: var(--lawyer-color);
+            background-color: rgba(246, 159, 20, 0.2);
+            
+        }
+
+    }
+
+    .my-course__type { 
         font-size: 1.4rem;
         line-height: 1;
         font-weight: 600;
         color: var(--light);
         padding: 0.8rem 1rem;
+        box-sizing: border-box;
+    }
+    .my-course__description{
+        margin-bottom: 2.4rem;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: var(--light-dark);
+        font-weight: 400;
     }
     .my-course__title{
-        margin-bottom: 4rem;
+        margin-bottom: 1rem;
+    }
+    .decor-line{
+        height: 1px;
+        width: 100%;
+        background-color: var(--light-dark);
+        margin-top: 2.4rem;
+        margin-bottom: 2.4rem;
     }
     .my-course__progress-box{
         margin-top: auto;
         width: 100%; 
+        margin-bottom: 2rem;
     }
     .my-course__progress-list{
         display: flex;
@@ -279,26 +397,46 @@
         b{
             font-weight: 700;
         }
+        
     }
-    .my-course__progress-bar  {
-
-    }
-    .my-course__go-on{
-        display: flex; 
-        margin-top: 2rem;
-        justify-content: space-between;
+    .my-course__footer{
+        display: flex;
         align-items: center;
+        gap: 1.6rem;
         width: 100%;
-        font-size: 1.6rem;
-        line-height: 1.4rem;
-        font-weight: 500;
-        color: var(--black);
-        text-decoration: none;
-        svg{
-            margin-left: 1rem;
-            path{
-                transition: var(--great-transition);
-                fill: var(--text-color);
+        .btn--to-pay{
+            flex-shrink: 0;
+            max-width: 15rem;
+            min-height: 5rem;
+        }
+    }
+    .my-course__footer-text{
+        margin: 0;
+        padding: 0;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        color: var(--text-color);
+        a{
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            transition: var(--great-transition);
+            svg{
+                position: absolute;
+                top: 110%;
+                left: 0;
+                path{
+                    transition: var(--great-transition);
+                }
+            }
+            &:hover{
+                color: var(--lawyer-color);
+                svg{
+                    path{
+                        fill: var(--lawyer-color);
+                        stroke: var(--lawyer-color);
+                    }
+                }
             }
         }
     }
@@ -316,14 +454,7 @@
                 #F8AF3B 20px
                 );
             }
-        }
-        .my-course__go-on{
-            svg:hover{
-                path{
-                    fill: var(--lawyer-color);
-                }
-            }
-        }
+        } 
     } 
     &--expert{
         .my-course__type{
@@ -340,13 +471,13 @@
                 );
             }
         }
-        .my-course__go-on{
-            svg:hover{
-                path{
-                    fill: var(--expert-color);
+        .my-course-continue{
+            .my-course-continue__link{
+                &:hover{
+                    background-color: var(--expert-color);
                 }
             }
-        }
+        } 
     }
 }
  

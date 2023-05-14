@@ -19,9 +19,9 @@ let nlBtnSubmit = document.querySelectorAll('.btn-submit');
 
 let authForm = document.querySelector('.auth-form');
 
-authForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    let formData = new FormData(this);
-    console.log(Array.from(formData));
-    console.log(window.__token);
-})
+// authForm.addEventListener('submit', function(e){
+//     e.preventDefault();
+//     let formData = new FormData(this);
+//     console.log(Array.from(formData));
+//     console.log(window.__token);
+// })

@@ -63,8 +63,12 @@ function ready() {
     }
 
     let arMenuLinks = document.querySelectorAll('.main-menu a');
+    let nlLinkFromMyCourseFooterText = document.querySelectorAll('.my-course__footer-text a');
 
     arMenuLinks.forEach(item => {
+        item.insertAdjacentHTML('beforeEnd', addSvgUnderline(item.offsetWidth));
+    });
+    nlLinkFromMyCourseFooterText.forEach(item => {
         item.insertAdjacentHTML('beforeEnd', addSvgUnderline(item.offsetWidth));
     });
     //код отвечающий за добавление svg подчеркивания к нужным ссылкам  --END
