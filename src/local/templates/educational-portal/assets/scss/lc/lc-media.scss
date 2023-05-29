@@ -89,6 +89,44 @@
         width: 62%;
         min-width: 48.3rem;
     }
+    .columns-box{
+        &.columns-box--contacts{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 750px){
+    .rate-done{
+        padding: 4rem;
+        text-align: center;
+        &::before{
+            position: relative;
+            top: 0;
+            left: 0; 
+            display: block;
+            max-width: 25rem;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+            transform: translateY(0);
+        }
+        .rate-done__btn-box{
+            justify-content: center;
+        }
+    }
+    .rate-done-box{
+        height: auto;
+        padding: 4rem 0;
+    }
+    .star-rating-item { 
+        width: 3.2rem;
+        height: 3.2rem; 
+    }
+    .star-rating {
+        .star-rating__item:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
 }
 @media screen and (max-width: 800px){
     .lc-my-courses-section .my-courses-box { 
@@ -103,6 +141,7 @@
         grid-template-columns: repeat(2,1fr);
     }
 }
+
 @media screen and (max-width: 650px){
     .course-leaflet{
         padding-right: auto;
@@ -132,11 +171,17 @@
 @media screen and (max-width: 550px){
     .user-personal-data,
     .progress-widget,
-    .elem-shadow,
+    // .elem-shadow,
+    .contacts-card,
     .course-leaflet,
     .lc-frame .bedsheet,
     .test-bedsheet{
         padding: 2rem;
+    }
+    .contacts-card {
+        .contacts-card__title {
+            margin-bottom: 2rem;
+        }
     }
     .empty-box{
         padding: 4rem;
@@ -162,6 +207,9 @@
     }
     .recomendations-slider__conrtol-panel{
         display: none;
+    }
+    .rate-done{
+        padding: 4rem; 
     }
 }
 @media screen and (max-width: 500px){
@@ -192,6 +240,21 @@
         }
     }
 }
+@media screen and (max-width: 450px){
+    .rate-done{ 
+        .rate-done__btn-box{
+            flex-direction: column;
+            margin-top: 2rem;
+            .btn{
+                width: 100%;
+                &:not(:last-child){
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 440px){
  
     .my-course {
@@ -218,6 +281,15 @@
         gap: 2rem;
         li{
             width: 100%;
+        }
+    }
+    .star-rating-item { 
+        width: 2.2rem;
+        height: 2.2rem; 
+    }
+    .star-rating {
+        .star-rating__item:not(:last-child) {
+            margin-right: 1rem;
         }
     }
 }
@@ -265,5 +337,19 @@
     }
     .lesson-gallery--two-col { 
         grid-template-columns: repeat(1,1fr);
+    }
+    .rate-done{
+        padding: 3rem;
+    }
+}
+@media screen and (max-width: 345px){
+    .star-rating-item { 
+        width: 2rem;
+        height: 2rem; 
+    }
+    .star-rating {
+        .star-rating__item:not(:last-child) {
+            margin-right: 5px;
+        }
     }
 }

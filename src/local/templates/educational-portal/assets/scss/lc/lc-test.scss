@@ -1,4 +1,7 @@
 .test{
+    button[type="submit"]{
+        margin-top: 4rem;
+    }
     .test__item{ 
         &:not(:first-child){
             margin-top: 2rem;
@@ -25,6 +28,14 @@
         line-height: 1.4;
         font-weight: 600;
         box-sizing: border-box;
+        .test-item-question--inner{
+            display: block;
+            margin-top: 2rem;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            font-weight: 500;
+            color: var(--text-color);
+        }
     } 
     .form-elem-radio,
     .form-elem-checkbox{
@@ -52,9 +63,11 @@
         &:not(:last-child){
             margin-bottom: 2rem;
         }
-    }
+    } 
 }
-
+.test-response-list ~ *{
+    margin-top: 2rem;
+}
 
 .test-result{
     margin-bottom: 3rem;
@@ -172,6 +185,16 @@
         &:not(:first-child){
             margin-top: 2rem;
         }
+    }
+}
+.course-assessment{
+    .test-item{
+        &:not(:first-child){
+            margin-top: 4rem;
+        }
+    }
+    .course-assessment__course-name{
+        margin-top: 2rem;
     }
 }
 

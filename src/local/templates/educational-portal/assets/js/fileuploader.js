@@ -58,7 +58,14 @@
                </li>
                `);
              });
+             
+             if(!window.hasOwnProperty('uploadForms'))
+             {
+               window.uploadForms = {};
+             }
+             window.uploadForms[e.target.closest('form').getAttribute('data-homework')] = this.arFiles;
          });
+         
          // удаление файлов из списка выбранных
          this.form.addEventListener('click', (e) => {
              if (e.target.className == 'file-link__remove-btn') {
@@ -79,13 +86,6 @@
                  }
              }
          });
-
-         //отправка файлов на сервер
-        //  this.form.addEventListener('submit', (e)=>{
-        //     e.preventDefault();
-        //     console.log(this.arFiles)
-        //  });
-
      }
 
  }

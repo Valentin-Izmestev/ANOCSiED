@@ -112,12 +112,13 @@ nav{
         li{
             padding: 2rem 0;
             box-sizing: border-box;
-            a{
+            a, .link-btn{
                 position: relative;
                 display: inline-block;
                 font-size: 1.5rem;
                 font-weight: 500;
                 color: var(--dark);
+                background-color: transparent;
                 transition: var(--great-transition); 
                 &:hover{
                     color: var(--expert-color);
@@ -272,12 +273,15 @@ nav{
             &:not(:last-child){
                 border-bottom: 1px solid var(--bg-color);
             }
-            a{
+            a, .link-btn{
                 display: block;
+                width: 100%;
+                background-color: transparent;
                 padding: 2rem;
                 font-size: 1.5rem;
                 line-height: 1.2;
                 font-weight: 500;
+                text-align: left;
                 color: var(--text-color);
                 text-decoration: none;
                 box-sizing: border-box;
@@ -588,7 +592,7 @@ nav{
             li {
                 padding: 0;
                 margin-bottom: 1.6rem;
-                a {
+                a, .link-btn {
                     display: inline-block;
                     // font-size: 1.4rem;
                     color: var(--text-color);

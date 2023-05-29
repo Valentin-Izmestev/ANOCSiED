@@ -168,6 +168,11 @@
         grid-template-columns: repeat(2,1fr);
         grid-gap: 3rem;
     }
+    .test-bedsheet{
+        .columns-box{
+            grid-gap: 2rem;
+        }
+    }
 }
 @media screen and (max-width: 770px){
     .expertise-section__header{
@@ -253,6 +258,13 @@
     .visual-link-grid{
         &--four-col { 
             grid-template-columns: repeat(1,1fr);
+        }
+    }
+    .test-bedsheet{
+        .columns-box{
+            &--two-col{
+                grid-template-columns: 1fr;
+            }
         }
     }
 }

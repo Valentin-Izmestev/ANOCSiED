@@ -34,6 +34,9 @@
             align-items: center;
         }
     }
+    .sort-link-list{
+        margin-left: auto;
+    }
 }
 .course-card{
     display: flex;
@@ -186,6 +189,9 @@
         align-items: flex-start;
         gap: 2rem;
        .sort-select-label{
+            margin-left: 0;
+       }
+       .sort-link-list{
             margin-left: 0;
        }
     }

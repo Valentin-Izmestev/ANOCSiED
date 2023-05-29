@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', ready);
 
 function ready() {
 
+    let preloader = document.querySelector('.preloader');
+    if(preloader){
+        preloader.classList.add('preloader--hide'); 
+        setTimeout(function(){
+            preloader.remove();
+        }, 500);
+    }
+
     // поведение иконки мыши (курсора) BEGIN
     let bat = document.querySelector('.bat');
 
@@ -449,6 +457,161 @@ function ready() {
     }
     arFromObjects.forEach(obj=>{
         obj.init();
+    }); 
+
+    // скрытие пройденных модулей
+    
+    let elemToggleCompliteModule = document.querySelector('.js__toggle-complite-module input');
+    
+    if(localStorage.getItem('lessonSpoiler') == 'true'){
+        if(elemToggleCompliteModule){
+            elemToggleCompliteModule.checked = true;
+            hideCompliteModule();
+        }
+    }
+    function hideCompliteModule(){
+        let complitedModule = document.querySelectorAll('.lesson-spoiler--completed');
+        console.log(complitedModule)
+        if(complitedModule.length > 0){
+            complitedModule.forEach(item=>{
+                console.log(item)
+                item.style.display = 'none';
+            });
+        }  
+    }
+    function showCompliteModule(){
+        let complitedModule = document.querySelectorAll('.lesson-spoiler--completed');
+ 
+        if(complitedModule.length > 0){
+            complitedModule.forEach(item=>{
+                console.log(item)
+                item.style.display = 'block';
+            });
+        }  
+    } 
+    function toggleCompliteModule(){  
+        switch (localStorage.getItem('lessonSpoiler') ) {
+            case null:
+                localStorage.setItem('lessonSpoiler', true); 
+                hideCompliteModule();
+                break;
+            case 'false':
+                localStorage.setItem('lessonSpoiler', true); 
+                hideCompliteModule()
+                break;
+            case 'true':
+                localStorage.setItem('lessonSpoiler', false); 
+                showCompliteModule()
+                break; 
+          }
+    }
+
+    if(elemToggleCompliteModule){
+        elemToggleCompliteModule.addEventListener('change', function(e){
+            console.log('gogogo')
+            toggleCompliteModule()
+        });
+    }
+    
+    // Автоматическая высота textarea
+    var tx = document.querySelectorAll('.textarea--auto-height');//РАСТЯГИВАЕМ_textarea 
+    for (var i = 0; i < tx.length; i++) { 
+        tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;'); 
+        tx[i].addEventListener("input", OnInput, false); 
+    } 
+    function OnInput() { 
+        this.style.height = 'auto'; 
+        this.style.height = (this.scrollHeight) + 'px'; 
+    }
+     
+    // плагин выпадающего списка
+    let arFormCategory = [];
+    let formCategorySelects = document.querySelectorAll('.form-elem-select__item');
+    if (formCategorySelects.length > 0) {
+        formCategorySelects.forEach(select => {
+            let currentSelect;
+            if (select.classList.contains('form-elem-select__item--no-search')) {
+                currentSelect = new Choices(select, {
+                    noResultsText: 'Значение не найдено',
+                    loadingText: 'Загрузка...',
+                    placeholder: false, 
+                    searchEnabled: false,
+                });
+            } else {
+                currentSelect = new Choices(select, {
+                    noResultsText: 'Значение не найдено',
+                    loadingText: 'Загрузка...',
+                    placeholder: false, 
+                    searchPlaceholderValue: 'Введите искомое значение',
+                });
+            }
+            arFormCategory.push(currentSelect);
+
+            select.addEventListener('change', function () {
+                console.log(this.value)
+                if (this.value != '') {
+                    this.closest('.form-elem-select').classList.add('form-elem--active');
+
+                    if (this.classList.contains('form__category-select--for-tab')) {
+                        let thisSelect = this;
+                        let currentForm = thisSelect.closest('.form-creating-petitions');
+                        let formTabContainers = currentForm.querySelectorAll('.form-creating-petitions__container');
+                        let formSubmit = currentForm.querySelector('.btn[type="submit"]');
+                        formSubmit.removeAttribute('disabled');
+                        formTabContainers.forEach(container => {
+                            if (container.getAttribute('id') === thisSelect.firstElementChild.getAttribute('value')) {
+                                container.style.display = 'block';
+                            } else {
+                                container.removeAttribute('style');
+                            }
+                        });
+                    }
+
+                }
+            });
+
+        });
+    }
+
+
+    // Рейтинг
+    let nlStarRating = document.querySelectorAll('.star-rating'); 
+    if(nlStarRating){
+        nlStarRating.forEach(item=>{
+            let starRating = new StarRating(item);
+            starRating.init();
+        });
+    }
+    
+    // Сортировка на ссылках
+    let nlSortLinkList = document.querySelectorAll('.sort-link-list');
+    if(nlSortLinkList.length > 0){
+        nlSortLinkList.forEach(item=>{  
+            let btn = item.querySelector('.sort-link-list__value');
+            let links = item.querySelectorAll('.sort-link-list__values a'); 
+            btn.addEventListener('click', function(){
+                 this.parentElement.classList.toggle('active');
+            });
+            links.forEach(link=>{
+                link.addEventListener('mouseover', function(e){
+                    links.forEach(item=>{
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        });
+    } 
+    // закрытие выпадающего списка при клике вне его
+    document.addEventListener('click', function(e){
+        let nlSortLinkList = document.querySelectorAll('.sort-link-list');
+        if(nlSortLinkList.length > 0){ 
+            if(!(e.target.classList.contains('sort-link-list') || e.target.closest('.sort-link-list'))){
+                nlSortLinkList.forEach(sortItem=>{
+                    sortItem.classList.remove('active');
+                });
+            }
+        }
     });
-    // console.log(arFromObjects);
+    
 }
