@@ -1,8 +1,11 @@
  
+form{
+    position: relative;
+}
 .form-elem {
     position: relative; 
     display: block;
-    span {
+    span, .fly-label {
         position: absolute;
         left: 0;
         top: 48%; 
@@ -42,7 +45,7 @@
 
         &:focus, 
         &:not(:placeholder-shown) { 
-            &~span {
+            &~span, &~.fly-label {
                top: 28%;
                font-size: 11px;
             }

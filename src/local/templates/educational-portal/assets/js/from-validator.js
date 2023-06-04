@@ -14,6 +14,18 @@ if(nlCheckboxActivators){
     });
 }
 
+// let allForms = document.querySelectorAll('form');
+
+// allForms.forEach(form=>{
+//     form.addEventListener('submit', (e)=>{
+      
+//         if(form.querySelector('.btn--disabled')){
+//             console.log('ecmь')
+//             e.preventDefault();
+//         }
+//     })
+    
+// });
 
 let nlBtnSubmit = document.querySelectorAll('.btn-submit');
 

@@ -8,5 +8,6 @@
 @@include('my-script-jquery.js');
 @@include('from-validator.js');
 @@include('fileuploader.js');
+@@include('form-ajax.js');
 
 

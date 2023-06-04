@@ -333,67 +333,7 @@ function ready() {
         });
     }
 
-
-
-    // работа модальных окон
-    // great-shadow--show 
-    // open-modal" data-modal-id="modal-auth"
-    let greatShadow = document.querySelector('.great-shadow');
-    let nlModalsWr = document.querySelectorAll('.modal-wr');
-    let nlGgoToLinks = document.querySelectorAll('.go-to-modal');
-    /**
-     * showModalFull - окрывает конкретное моальное окно
-     * modalId - строка с id модалки, которую нужно открыть
-     */
-    function showModalFull(modalId) {
-        let currentModal = document.querySelector('#' + modalId);
-        greatShadow.classList.add('great-shadow--show');
-        setTimeout(function () {
-            currentModal.classList.add('active');
-        }, 200);
-    }
-
-    function hideModalFull() {
-        nlModalsWr.forEach(item => {
-            item.classList.remove('active');
-        });
-        setTimeout(function () {
-            greatShadow.classList.remove('great-shadow--show');
-        }, 200);
-    }
-
-    function goToModall(nodeFrom, modalIdTo) {
-        nodeFrom.classList.remove('active');
-
-        let currentModal = document.querySelector(modalIdTo);
-        currentModal.classList.add('active');
-    }
-
-    let nlOpenModalBtn = document.querySelectorAll('.open-modal');
-    if (nlOpenModalBtn) {
-        nlOpenModalBtn.forEach(item => {
-            item.addEventListener('click', function (e) {
-                e.preventDefault();
-                showModalFull(item.getAttribute('data-modal-id'));
-            });
-        });
-    }
-    if (greatShadow) {
-        greatShadow.addEventListener('click', function (e) {
-            if (e.target.classList.contains('great-shadow') || e.target.classList.contains('modal-wr')) {
-                hideModalFull();
-            }
-        });
-    }
-    if (nlGgoToLinks) {
-        nlGgoToLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                goToModall(e.currentTarget.closest('.modal-wr'), e.currentTarget.getAttribute('href'))
-            });
-        });
-    }
-
+ 
 
     // Плавная прокрутка страницы при клике на яконую ссылку
 

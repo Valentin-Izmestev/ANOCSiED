@@ -6018,11 +6018,15 @@ a.file-link:hover .file-link__caption {
     font-size: 3rem;
   }
 }
+form {
+  position: relative;
+}
+
 .form-elem {
   position: relative;
   display: block;
 }
-.form-elem span {
+.form-elem span, .form-elem .fly-label {
   position: absolute;
   left: 0;
   top: 48%;
@@ -6040,7 +6044,7 @@ a.file-link:hover .file-link__caption {
   transition: var(--great-transition);
   cursor: text;
 }
-.form-elem span sup {
+.form-elem span sup, .form-elem .fly-label sup {
   position: relative;
   top: 3px;
   color: var(--alert-color);
@@ -6063,15 +6067,15 @@ a.file-link:hover .file-link__caption {
 .form-elem .form-elem__input::-webkit-input-placeholder, .form-elem .form-elem__input::-moz-placeholder, .form-elem .form-elem__input:-moz-placeholder, .form-elem .form-elem__input:-ms-input-placeholder, .form-elem .form-elem__input::placeholder {
   color: transparent !important;
 }
-.form-elem .form-elem__input:not(:-moz-placeholder-shown) ~ span {
+.form-elem .form-elem__input:not(:-moz-placeholder-shown) ~ span, .form-elem .form-elem__input:not(:-moz-placeholder-shown) ~ .fly-label {
   top: 28%;
   font-size: 11px;
 }
-.form-elem .form-elem__input:not(:-ms-input-placeholder) ~ span {
+.form-elem .form-elem__input:not(:-ms-input-placeholder) ~ span, .form-elem .form-elem__input:not(:-ms-input-placeholder) ~ .fly-label {
   top: 28%;
   font-size: 11px;
 }
-.form-elem .form-elem__input:focus ~ span, .form-elem .form-elem__input:not(:placeholder-shown) ~ span {
+.form-elem .form-elem__input:focus ~ span, .form-elem .form-elem__input:focus ~ .fly-label, .form-elem .form-elem__input:not(:placeholder-shown) ~ span, .form-elem .form-elem__input:not(:placeholder-shown) ~ .fly-label {
   top: 28%;
   font-size: 11px;
 }
@@ -7935,6 +7939,7 @@ nav {
 }
 
 .modal {
+  position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-box-flex: 0;
@@ -7985,6 +7990,38 @@ nav {
 }
 .modal .form-elem-checkbox .form-elem-checkbox__caption {
   font-size: 1.4rem;
+}
+
+.response-from-server {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--light);
+  font-size: 2.3rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--dark);
+  -webkit-transition: var(--great-transition);
+  -o-transition: var(--great-transition);
+  transition: var(--great-transition);
+  opacity: 0;
+  visibility: hidden;
+}
+.response-from-server.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal-auth-reg .form-elem {
