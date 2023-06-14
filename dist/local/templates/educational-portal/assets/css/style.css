@@ -8801,7 +8801,6 @@ nav {
   display: block;
   margin: 0 !important;
   width: 100%;
-  aspect-ratio: 49/65;
   border-radius: 4px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -8809,13 +8808,23 @@ nav {
   -o-object-position: cenetr center;
      object-position: cenetr center;
 }
+.lesson-gallery--one-col {
+  -ms-grid-columns: (1fr)[1];
+  grid-template-columns: repeat(1, 1fr);
+}
 .lesson-gallery--two-col {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
 }
+.lesson-gallery--two-col .lesson-gallery__item {
+  aspect-ratio: 49/65;
+}
 .lesson-gallery--tree-col {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
+}
+.lesson-gallery--tree-col .lesson-gallery__item {
+  aspect-ratio: 49/65;
 }
 
 .empty-box {
