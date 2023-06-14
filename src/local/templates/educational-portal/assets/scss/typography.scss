@@ -40,7 +40,12 @@ a{
 .alert-color{
     color: var(--alert-color);
 }
-.streak-marker{
+.lessons-section .lesson-spoiler ol{
+    padding: 0;
+    padding-left: 3rem;
+}
+.streak-marker,
+.lessons-section .lesson-spoiler ul{
     li{
         position: relative;
         padding-left: 3rem;

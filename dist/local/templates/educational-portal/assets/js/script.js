@@ -384,9 +384,10 @@ class StarRating{
     fillRating = (index)=>{ 
         this.ratingItems.forEach((item, currentIndex)=>{
             if(currentIndex <= index){
-                item.checked = true;
+                item.parentElement.classList.add('checked');
+                // item.checked = true;
             }else{
-                item.checked = false;
+                item.parentElement.classList.remove('checked');
             }
         });
     }
@@ -495,8 +496,7 @@ function ready() {
             pagination: {
                 el: '.recomendations-slider__conrtol-panel .swiper-pagination',
                 clickable: true,
-            },
-
+            }, 
             // Navigation arrows
             navigation: {
                 nextEl: '.recomendations-slider__conrtol-panel .swiper-button-next',
@@ -656,6 +656,15 @@ function ready() {
                 itemSelectText: '',
                 position: 'bottom'
             });
+
+            item.addEventListener('change', function(e){  
+                if(currentSelect.getValue(true) == 'sort=name'){ 
+                    let search = (document.location.pathname)?document.location.pathname : '';
+                    window.location.href = window.location.pathname + '?' + currentSelect.getValue(true)
+                }else if(currentSelect.getValue(true) == 'sort=date'){  
+                    window.location.href = window.location.pathname + '?' + currentSelect.getValue(true);
+                } 
+            });  
         });
     }
 
@@ -880,8 +889,7 @@ function ready() {
             }
             arFormCategory.push(currentSelect);
 
-            select.addEventListener('change', function () {
-                console.log(this.value)
+            select.addEventListener('change', function () { 
                 if (this.value != '') {
                     this.closest('.form-elem-select').classList.add('form-elem--active');
 
@@ -1131,7 +1139,7 @@ let authForm = document.querySelector('.auth-form');
 ;
 document.addEventListener('DOMContentLoaded', function(){
 
-    //window.__token = 'b09727219f2bee70974437c64db619f0'; //не испольовать на боевом
+    window.__token = 'b09727219f2bee70974437c64db619f0'; //не испольовать на боевом
 
      // работа модальных окон 
 
@@ -1154,6 +1162,7 @@ document.addEventListener('DOMContentLoaded', function(){
          nlModalsWr.forEach(item => { 
              item.classList.remove('active'); 
              let currentForm = item.querySelector('form');
+
              if(currentForm){
                  currentForm.reset();
              }
@@ -1166,6 +1175,14 @@ document.addEventListener('DOMContentLoaded', function(){
                  currentRFS.classList.remove('active');
                  currentRFS.innerHTML = '';
              }
+             
+             if(item.querySelector('.checkbox-activator')){ 
+                let btn = item.querySelector('button[type="submit"]'); 
+                if(!btn.classList.contains('btn--disabled')){ 
+                    btn.classList.add('btn--disabled');
+                } 
+               
+             }
          });
          setTimeout(function () {
              greatShadow.classList.remove('great-shadow--show');
@@ -1177,13 +1194,24 @@ document.addEventListener('DOMContentLoaded', function(){
          let currentModal = document.querySelector(modalIdTo);
          currentModal.classList.add('active');
      }
+
+     function showMessageModal(message){
+        let messageModal = document.querySelector('#modal-message');
+        let messageBox = messageModal.querySelector('.modal-message__message-box');
+        messageBox.innerHTML = '';
+        messageBox.innerHTML = message;
+        greatShadow.classList.add('great-shadow--show');
+         setTimeout(function () {
+            messageModal.classList.add('active');
+         }, 200);
+     }
  
      let nlOpenModalBtn = document.querySelectorAll('.open-modal');
      if (nlOpenModalBtn) {
          nlOpenModalBtn.forEach(item => {
              item.addEventListener('click', function (e) {
                  e.preventDefault();
-                 showModalFull(item.getAttribute('data-modal-id'));
+                 showModalFull(item.getAttribute('data-modal-id')); 
              });
          });
      }
@@ -1208,28 +1236,21 @@ document.addEventListener('DOMContentLoaded', function(){
     if(authForm){
         authForm.addEventListener('submit', function(e){
             e.preventDefault(); 
-            if(this.querySelector('.btn--disabled')){
-                console.log('return');
+            if(this.querySelector('.btn--disabled')){ 
                 return;
             }
             let errorBox = this.querySelector('.form-error-box'); 
             let authFormData = new FormData(this);
             authFormData.append('sessid', window.__token);
-            let toServer = [];
-            authFormData.forEach((value, key)=>{
-                toServer[key] = value;
-            });
-
             axios.post(
                 '/ajax/secure/auth',
-                toServer
+                authFormData
             ).then((response) => { 
               if (response.data.done == 1) {
                 window.location.href = window.location; 
               }
             }).catch(({response}) => {
-                errorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`);
-            //   alert(response.data.error); 
+                errorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`); 
             }); 
         });
     } 
@@ -1238,8 +1259,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let regForm = document.querySelector('.reg-form');
     if(regForm){
         regForm.addEventListener('submit', function(e){
-            e.preventDefault();
-             
+            e.preventDefault(); 
             if(this.querySelector('.btn--disabled')){ 
                 return;
             }
@@ -1325,6 +1345,120 @@ document.addEventListener('DOMContentLoaded', function(){
             }).catch(({response}) => {
                 formErrorBox.insertAdjacentHTML('beforeEnd', `${response.data.error}`);
             //   alert(response.data.error);
+            });
+        });
+    }
+
+    //форма Задать вопрос
+    let questionForm = document.querySelector('.question-form');
+    if(questionForm){
+        questionForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            let formErrorBox = recoveryForm.querySelector('.form-error-box');
+            let questionFormData = new FormData(questionFormData);
+            questionFormData.append('sessid', window.__token);
+    
+            axios.post(
+                '/ajax/secure/support',
+                questionFormData
+            ).then((response) => {
+              console.log(response);
+              if (response.data.done == 1) {
+                hideModalFull();
+              }
+            }).catch(({response}) => {
+                errorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`); 
+            });
+        });
+        
+    }
+
+    //форма отзыва о курсе
+    let reviewForm = document.querySelectorAll('.review-form');
+    if(reviewForm){
+        reviewForm.forEach((currentReviewForm)=>{
+            currentReviewForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                let formErrorBox = this.querySelector('.form-error-box'); 
+                let responseFromServer = this.querySelector('.response-from-server'); 
+                let reviewFormData = new FormData(this);
+                reviewFormData.append('sessid', window.__token);
+                // let testar = [];
+                // reviewFormData.forEach((index, item)=>{
+                //     testar[item] = index;
+                // });   
+                axios.post(
+                    '/ajax/review/course',
+                    reviewFormData
+                ).then((response) => { 
+                  if (response.data.done == 1) {
+                    responseFromServer.classList.add('active');
+                    responseFromServer.innerHTML = 'Cпасибо, ваш отзыв учтен';
+                    setTimeout(function(){
+                        hideModalFull();
+                    }, 3000);
+                  }
+                }).catch(({response}) => {
+                    formErrorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`); 
+                });
+            });
+        });
+        
+    }
+
+    // форма запроса полной и подробной программы обучения
+    let rftpForm = document.querySelector('.request-full-training-program-form');
+    if(rftpForm){
+        rftpForm.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            let rftpFormData = new FormData(rftpForm);
+            rftpFormData.append('sessid', window.__token); 
+             
+            axios.post(
+                '/ajax/form/about-course',
+                rftpFormData
+            ).then((response) => { 
+              if (response.data.done == 1) {
+                showMessageModal('Полная и подробная программа обучения будет выслана на указанный адрес электронной почты');
+                setTimeout(function(){
+                    rftpForm.reset();
+                    hideModalFull();
+                }, 3000);
+              }
+            }).catch(({response}) => { 
+                showMessageModal(response.data.error);
+                setTimeout(function(){ 
+                    hideModalFull();
+                }, 3000);
+            });
+        });
+    }
+    // форма вопроса по экспертизе и подобному
+    let fromMainAsk = document.querySelectorAll('.form-main-ask');
+    if(fromMainAsk){
+        fromMainAsk.forEach(form=>{
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                let msFormData = new FormData(form);
+                msFormData.append('sessid', window.__token); 
+                axios.post(
+                    '/ajax/form/main-ask',
+                    msFormData
+                ).then((response) => { 
+                  if (response.data.done == 1) {
+                    showMessageModal('Даннные ушли на сервер');
+                    setTimeout(function(){
+                        form.reset();
+                        hideModalFull();
+                    }, 3000);
+                  }
+                }).catch(({response}) => { 
+                    showMessageModal(response.data.error);
+                    setTimeout(function(){ 
+                        hideModalFull();
+                    }, 3000);
+                });
             });
         });
     }

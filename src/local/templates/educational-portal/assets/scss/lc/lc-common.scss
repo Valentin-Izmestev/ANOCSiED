@@ -661,7 +661,8 @@
         width: 100%;
         aspect-ratio: 49/65;
         border-radius: 4px;
-        object-fit: cover;
+        object-fit: contain;
+        background-color: var(--bg-color);
         object-position: cenetr center;
     }
     &--two-col{
@@ -737,7 +738,8 @@
     background-color: var(--bg-color);
     overflow: hidden;
     cursor: pointer;
-    input[type="checkbox"]{
+    input[type="checkbox"],
+    input[type="radio"]{
         position: absolute;
         top: 0;
         left: 0;
@@ -752,9 +754,14 @@
         background-color: var(--light-dark);
         mask-size: contain;
     }
-    input[type="checkbox"]:checked ~ .star-rating-item__icon{
-        background-color: var(--lawyer-color);
+    &.checked{
+        .star-rating-item__icon{
+            background-color: var(--lawyer-color);
+        }
     }
+    // input[type="checkbox"]:checked ~ .star-rating-item__icon{
+    //     background-color: var(--lawyer-color);
+    // }
 }
 
 .rate-done-box{

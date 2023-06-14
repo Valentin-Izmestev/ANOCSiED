@@ -77,7 +77,12 @@
         margin-bottom: 2rem;
     }
     .form-error-box{
+        position: relative;
         margin-bottom: 1.6rem;
+        overflow: hidden;
+        li:not(:first-child){
+            margin-top: 1rem;
+        }
     }
     button[type="submit"]{
         margin-top: 4rem;
@@ -97,6 +102,17 @@
         }
     }
     
+}
+.modal-message__message-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15rem;
+    font-size: 2.3rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--dark);
+    text-align: center;
 }
 .response-from-server{
     position: absolute;
@@ -136,11 +152,24 @@
 
 }
 
-#modal-student-review{
+.course-review-modal{
     .modal{
-        max-width: 72rem;
+        max-width: 70rem;
     }
-    .lonely-textarea{
-        height: 36rem;
+    .form-elem__textarea{
+        min-height: 20rem;
+    }
+    .form-elem{
+        margin-bottom: 2rem;
+    }
+    .star-rating{
+        margin-bottom: 2rem;
+        .star-rating__item{
+            width: 4rem;
+            height: 4rem;
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
     }
 }

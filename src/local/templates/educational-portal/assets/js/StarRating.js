@@ -13,9 +13,10 @@ class StarRating{
     fillRating = (index)=>{ 
         this.ratingItems.forEach((item, currentIndex)=>{
             if(currentIndex <= index){
-                item.checked = true;
+                item.parentElement.classList.add('checked');
+                // item.checked = true;
             }else{
-                item.checked = false;
+                item.parentElement.classList.remove('checked');
             }
         });
     }

@@ -102,8 +102,7 @@ function ready() {
             pagination: {
                 el: '.recomendations-slider__conrtol-panel .swiper-pagination',
                 clickable: true,
-            },
-
+            }, 
             // Navigation arrows
             navigation: {
                 nextEl: '.recomendations-slider__conrtol-panel .swiper-button-next',
@@ -263,6 +262,15 @@ function ready() {
                 itemSelectText: '',
                 position: 'bottom'
             });
+
+            item.addEventListener('change', function(e){  
+                if(currentSelect.getValue(true) == 'sort=name'){ 
+                    let search = (document.location.pathname)?document.location.pathname : '';
+                    window.location.href = window.location.pathname + '?' + currentSelect.getValue(true)
+                }else if(currentSelect.getValue(true) == 'sort=date'){  
+                    window.location.href = window.location.pathname + '?' + currentSelect.getValue(true);
+                } 
+            });  
         });
     }
 
@@ -487,8 +495,7 @@ function ready() {
             }
             arFormCategory.push(currentSelect);
 
-            select.addEventListener('change', function () {
-                console.log(this.value)
+            select.addEventListener('change', function () { 
                 if (this.value != '') {
                     this.closest('.form-elem-select').classList.add('form-elem--active');
 

@@ -6,7 +6,10 @@
     height: 1px;
 }
 .lg-img-wrap{
-    padding-bottom: 4rem;
+    padding-bottom: 0rem;
+}
+.lg-content{
+    top: 0 !important;
 }
 .section-title{
     margin-bottom: 4rem;
@@ -1125,6 +1128,9 @@ a.btn{
 
 .file-list{
     li{
+        &::before{
+            display: none;
+        }
         &:not(:last-child){
             margin-bottom: 2rem;
         }

@@ -3698,16 +3698,24 @@ a:hover {
   color: var(--alert-color);
 }
 
-.streak-marker li {
+.lessons-section .lesson-spoiler ol {
+  padding: 0;
+  padding-left: 3rem;
+}
+
+.streak-marker li,
+.lessons-section .lesson-spoiler ul li {
   position: relative;
   padding-left: 3rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.streak-marker li:not(:last-child) {
+.streak-marker li:not(:last-child),
+.lessons-section .lesson-spoiler ul li:not(:last-child) {
   margin-bottom: 2rem;
 }
-.streak-marker li::before {
+.streak-marker li::before,
+.lessons-section .lesson-spoiler ul li::before {
   content: url("data:image/svg+xml,%3Csvg width='19' height='5' viewBox='0 0 19 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.00358 3.65286C1.54833 0.0518775 13.4948 0.42669 17.4948 2.92666C19.4277 4.13474 11.3195 1.9273 6.50209 2.70998C2.02968 3.4366 0.927895 4.15316 1.00358 3.65286Z' fill='%233449B7' stroke='%233449B7' stroke-width='0.5'/%3E%3C/svg%3E%0A");
   position: absolute;
   left: 0;
@@ -3771,7 +3779,11 @@ ol li:before {
 }
 
 .lg-img-wrap {
-  padding-bottom: 4rem;
+  padding-bottom: 0rem;
+}
+
+.lg-content {
+  top: 0 !important;
 }
 
 .section-title {
@@ -5027,6 +5039,9 @@ a.btn {
   opacity: 0;
 }
 
+.file-list li::before {
+  display: none;
+}
 .file-list li:not(:last-child) {
   margin-bottom: 2rem;
 }
@@ -6020,6 +6035,11 @@ a.file-link:hover .file-link__caption {
 }
 form {
   position: relative;
+}
+
+.field-caption {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .form-elem {
@@ -7974,7 +7994,12 @@ nav {
   margin-bottom: 2rem;
 }
 .modal .form-error-box {
+  position: relative;
   margin-bottom: 1.6rem;
+  overflow: hidden;
+}
+.modal .form-error-box li:not(:first-child) {
+  margin-top: 1rem;
 }
 .modal button[type=submit] {
   margin-top: 4rem;
@@ -7990,6 +8015,24 @@ nav {
 }
 .modal .form-elem-checkbox .form-elem-checkbox__caption {
   font-size: 1.4rem;
+}
+
+.modal-message__message-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 15rem;
+  font-size: 2.3rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
 }
 
 .response-from-server {
@@ -8036,11 +8079,24 @@ nav {
   font-size: 1.6rem;
 }
 
-#modal-student-review .modal {
-  max-width: 72rem;
+.course-review-modal .modal {
+  max-width: 70rem;
 }
-#modal-student-review .lonely-textarea {
-  height: 36rem;
+.course-review-modal .form-elem__textarea {
+  min-height: 20rem;
+}
+.course-review-modal .form-elem {
+  margin-bottom: 2rem;
+}
+.course-review-modal .star-rating {
+  margin-bottom: 2rem;
+}
+.course-review-modal .star-rating .star-rating__item {
+  width: 4rem;
+  height: 4rem;
+}
+.course-review-modal .star-rating .star-rating__item:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .lc-frame {
@@ -8747,8 +8803,9 @@ nav {
   width: 100%;
   aspect-ratio: 49/65;
   border-radius: 4px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: var(--bg-color);
   -o-object-position: cenetr center;
      object-position: cenetr center;
 }
@@ -8843,7 +8900,8 @@ nav {
   overflow: hidden;
   cursor: pointer;
 }
-.star-rating-item input[type=checkbox] {
+.star-rating-item input[type=checkbox],
+.star-rating-item input[type=radio] {
   position: absolute;
   top: 0;
   left: 0;
@@ -8860,7 +8918,7 @@ nav {
   -webkit-mask-size: contain;
           mask-size: contain;
 }
-.star-rating-item input[type=checkbox]:checked ~ .star-rating-item__icon {
+.star-rating-item.checked .star-rating-item__icon {
   background-color: var(--lawyer-color);
 }
 
