@@ -41,8 +41,16 @@ document.addEventListener('DOMContentLoaded', function(){
                 let btn = item.querySelector('button[type="submit"]'); 
                 if(!btn.classList.contains('btn--disabled')){ 
                     btn.classList.add('btn--disabled');
-                } 
-               
+                }  
+             }
+
+             let starRatingItem = document.querySelectorAll('.modal .star-rating-item');
+             if(starRatingItem){
+                starRatingItem.forEach(item=>{
+                    item.classList.remove('checked');
+                    let input = item.querySelector('input');
+                    input.checked = false;
+                });
              }
          });
          setTimeout(function () {
@@ -240,9 +248,12 @@ document.addEventListener('DOMContentLoaded', function(){
         reviewForm.forEach((currentReviewForm)=>{
             currentReviewForm.addEventListener('submit', function(e){
                 e.preventDefault();
+                let courseId = document.querySelector('[data-course-id]');  
                 let formErrorBox = this.querySelector('.form-error-box'); 
                 let responseFromServer = this.querySelector('.response-from-server'); 
                 let reviewFormData = new FormData(this);
+                
+                reviewFormData.append('courseXmlId', courseId.getAttribute('data-course-id'));
                 reviewFormData.append('sessid', window.__token);
                 // let testar = [];
                 // reviewFormData.forEach((index, item)=>{
@@ -266,7 +277,39 @@ document.addEventListener('DOMContentLoaded', function(){
         });
         
     }
-
+    let reviewFormAll = document.querySelectorAll('.review-form-all');
+    if(reviewFormAll){
+        reviewFormAll.forEach((currentReviewForm)=>{
+            currentReviewForm.addEventListener('submit', function(e){
+                e.preventDefault();
+                let courseId = document.querySelector('[data-course-id]');  
+                let formErrorBox = this.querySelector('.form-error-box'); 
+                let responseFromServer = this.querySelector('.response-from-server'); 
+                let reviewFormAllData = new FormData(this); 
+                reviewFormAllData.append('sessid', window.__token);
+                // let testar = [];
+                // reviewFormAllData.forEach((index, item)=>{
+                //     testar[item] = index;
+                // });   
+                // console.log(testar);
+                axios.post(
+                    '/ajax/review/review',
+                    reviewFormAllData
+                ).then((response) => { 
+                  if (response.data.done == 1) {
+                    responseFromServer.classList.add('active');
+                    responseFromServer.innerHTML = 'Cпасибо, ваш отзыв учтен';
+                    setTimeout(function(){
+                        hideModalFull();
+                    }, 3000);
+                  }
+                }).catch(({response}) => {
+                    formErrorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`); 
+                });
+            });
+        }); 
+    }
+    
     // форма запроса полной и подробной программы обучения
     let rftpForm = document.querySelector('.request-full-training-program-form');
     if(rftpForm){
@@ -300,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(fromMainAsk){
         fromMainAsk.forEach(form=>{
             form.addEventListener('submit', function(e){
-                e.preventDefault();
+                e.preventDefault();  
                 let msFormData = new FormData(form);
                 msFormData.append('sessid', window.__token); 
                 axios.post(

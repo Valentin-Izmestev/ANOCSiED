@@ -699,9 +699,7 @@
             <form name="student-review-form" class="review-form">
                 <h2 class="h4 modal__caption">
                     Оставить отзыв о курсе
-                </h2> 
-                <!-- атрибут value приведеннного ниже инпута на страницах курса отдпльным уникальным значением.-->
-                <input type="hidden" name="courseXmlId" value="5b3808ba-0888-487a-8311-65be809dd506">
+                </h2>  
                 <ul class="form-error-box"> 
                 </ul>
                 <label class="form-elem ">
@@ -752,10 +750,10 @@
             </form>
         </div>
     </div>  
-    <!-- модальное окно для оставления отзыва о выбранном курсе из списка-->
-    <div class="modal-wr course-review-modal" id="modal-student-many-review"> 
+    <!-- модальное окно для оставления отзыва о курсах-->
+    <div class="modal-wr course-review-modal" id="modal-student-review-all"> 
         <div class="modal  bat-lawyer"> 
-            <form name="student-review-form" class="review-form">
+            <form name="student-review-form" class="review-form-all">
                 <h2 class="h4 modal__caption">
                     Оставить отзыв о курсе
                 </h2> 
@@ -764,17 +762,7 @@
                 <label class="form-elem ">
                     <input type="text" class="form-elem__input" name="name" placeholder="Имя <sup>*</sup>" required="required">
                     <span>Имя <sup>*</sup></span>
-                </label> 
-                <div class="form-elem form-elem-select form-elem-select--float-caption">
-                    <select class="form-elem-select__item" name="courseXmlId">
-                        <option value="">Выберите курс</option>
-                        <option value="5b3808ba-0888-487a-8311-65be809dd506">Основы судебной экспертизы для юристов</option>
-                        <option value="5b3808ba-0888-487a-8311-65be809dd598">Основы судебной экспертизы для экспертов</option>
-                        <option value="5b3808ba-0888-487a-8311-65be809dee06">Юридическая юриспруденция для юристов</option>
-                        <option value="5b3808ba-0888-487a-8312-65be809dd506">Экспертная экспертиза для экспертов</option>
-                    </select>
-                    <span class="form-elem__caption">Выберите курс<sup>*</sup></span>
-                </div> 
+                </label>  
                 <span class="field-caption">Оценка</span>
                 <div class="star-rating">
                     <label class="star-rating-item star-rating__item bat-expert">
