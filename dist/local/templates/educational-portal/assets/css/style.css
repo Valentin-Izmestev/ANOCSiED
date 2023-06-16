@@ -8826,9 +8826,6 @@ nav {
 .lesson-gallery--tree-col .lesson-gallery__item {
   aspect-ratio: 49/65;
 }
-.lesson-gallery--horizontal {
-  background-color: red;
-}
 .lesson-gallery--horizontal.lesson-gallery--two-col {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);

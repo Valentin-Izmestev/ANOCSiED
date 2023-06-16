@@ -680,8 +680,7 @@
             aspect-ratio: 49/65;  
         }
     }
-    &--horizontal{
-        background-color: red;
+    &--horizontal{ 
         &.lesson-gallery--two-col{
             grid-template-columns: repeat(2, 1fr);
             .lesson-gallery__item{  
