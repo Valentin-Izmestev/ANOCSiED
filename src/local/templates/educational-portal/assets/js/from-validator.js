@@ -1,39 +1,41 @@
-// активатор кнопок в модалке
-let nlCheckboxActivators = document.querySelectorAll('.checkbox-activator');
-if(nlCheckboxActivators){
-    nlCheckboxActivators.forEach(item=>{
-        item.addEventListener('click', function(){
-            let modal = item.closest('.modal');
-            let activatedElement = modal.querySelector('.' + item.getAttribute('data-activate'));
-            if(item.checked){ 
-                activatedElement.classList.remove('btn--disabled');
-            }else{
-                activatedElement.classList.add('btn--disabled');
-            }
+document.addEventListener('DOMContentLoaded', () => {
+    // активатор кнопок в модалке
+    let nlCheckboxActivators = document.querySelectorAll('.checkbox-activator');
+    if (nlCheckboxActivators) {
+        nlCheckboxActivators.forEach(item => {
+            item.addEventListener('change', function () {
+                let modal = item.closest('.modal');
+                let activatedElement = modal.querySelector('.' + item.getAttribute('data-activate'));
+                if (item.checked) {
+                    activatedElement.classList.remove('btn--disabled');
+                } else {
+                    activatedElement.classList.add('btn--disabled');
+                }
+            });
         });
-    });
-}
+    }
 
-// let allForms = document.querySelectorAll('form');
+    // let allForms = document.querySelectorAll('form');
 
-// allForms.forEach(form=>{
-//     form.addEventListener('submit', (e)=>{
-      
-//         if(form.querySelector('.btn--disabled')){
-//             console.log('ecmь')
-//             e.preventDefault();
-//         }
-//     })
-    
-// });
+    // allForms.forEach(form=>{
+    //     form.addEventListener('submit', (e)=>{
 
-let nlBtnSubmit = document.querySelectorAll('.btn-submit');
+    //         if(form.querySelector('.btn--disabled')){
+    //             console.log('ecmь')
+    //             e.preventDefault();
+    //         }
+    //     })
 
-let authForm = document.querySelector('.auth-form');
+    // });
 
-// authForm.addEventListener('submit', function(e){
-//     e.preventDefault();
-//     let formData = new FormData(this);
-//     console.log(Array.from(formData));
-//     console.log(window.__token);
-// })
+    let nlBtnSubmit = document.querySelectorAll('.btn-submit');
+
+    let authForm = document.querySelector('.auth-form');
+
+    // authForm.addEventListener('submit', function(e){
+    //     e.preventDefault();
+    //     let formData = new FormData(this);
+    //     console.log(Array.from(formData));
+    //     console.log(window.__token);
+    // })
+})

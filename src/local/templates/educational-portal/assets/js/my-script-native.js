@@ -264,11 +264,11 @@ function ready() {
             });
 
             item.addEventListener('change', function(e){  
-                if(currentSelect.getValue(true) == 'sort=name'){ 
+                if(currentSelect.getValue(true) == 'name'){ 
                     let search = (document.location.pathname)?document.location.pathname : '';
-                    window.location.href = window.location.pathname + '?' + currentSelect.getValue(true)
-                }else if(currentSelect.getValue(true) == 'sort=date'){  
-                    window.location.href = window.location.pathname + '?' + currentSelect.getValue(true);
+                    window.location.href = window.location.pathname + '?' +'sort='+ currentSelect.getValue(true)
+                }else if(currentSelect.getValue(true) == 'date'){  
+                    window.location.href = window.location.pathname + '?' +'sort='+ currentSelect.getValue(true);
                 } 
             });  
         });
