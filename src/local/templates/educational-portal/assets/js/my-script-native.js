@@ -1,14 +1,13 @@
-document.addEventListener('DOMContentLoaded', ready);
 
-function ready() {
-
+ 
+document.addEventListener('DOMContentLoaded', ()=>{
     let preloader = document.querySelector('.preloader');
     if(preloader){
         preloader.classList.add('preloader--hide'); 
         setTimeout(function(){
             preloader.remove();
         }, 500);
-    }
+    }  
 
     // поведение иконки мыши (курсора) BEGIN
     let bat = document.querySelector('.bat');
@@ -274,30 +273,7 @@ function ready() {
         });
     }
 
-    // обработка наведения на карточки авторов курса
-    let autoTrigger = document.querySelectorAll('.author__trigger');
-    let autoCard = document.querySelectorAll('.author');
 
-    if (autoCard) {
-        autoTrigger.forEach(item => {
-            item.addEventListener('mouseover', function (e) {
-                let descr = this.parentElement.querySelector('.author__description');
-                descr.style.display = 'block';
-                let descrHeight = descr.offsetHeight;
-                descr.style.height = 0;
-                setTimeout(function () {
-                    descr.style.height = descrHeight + 'px';
-                }, 50);
-            });
-            item.addEventListener('mouseout', function (e) {
-                let descr = this.parentElement.querySelector('.author__description');
-                descr.style.height = 0;
-                setTimeout(function () {
-                    descr.removeAttribute('style');
-                }, 200);
-            });
-        });
-    }
 
     // равзорачивание отзыва
     let nlShowCommentBtn = document.querySelectorAll('.review-card__show-comment-btn');
@@ -560,5 +536,17 @@ function ready() {
             }
         }
     });
-    
-}
+
+
+ //подключаю полосу прокрутки
+
+ let arSimplembar = document.querySelectorAll('.simplebar-box');
+ console.log(arSimplembar);
+    arSimplembar.forEach(simplebarItem => {
+        console.log('start arSimplembar');
+        new SimpleBar(simplebarItem, {
+            autoHide: false
+        });
+    });
+});
+ 

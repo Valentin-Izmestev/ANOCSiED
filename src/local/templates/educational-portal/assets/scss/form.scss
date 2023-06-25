@@ -45,7 +45,12 @@ form{
         &::placeholder {
             color: transparent !important;
         }
-        
+        &::-moz-placeholder{
+            color: transparent !important;
+        }
+        &:-moz-placeholder{
+            color: transparent !important;
+        }
 
         &:focus, 
         &:not(:placeholder-shown) { 

@@ -1,6 +1,7 @@
 @@include('jquery-1.12.1.js');
 @@include('jquery.maskedinput.js');
 @@include('swiper-bundle.js');
+@@include('simplebar.js');
 @@include('lightgallery.min.js');
 @@include('choices.min.js'); 
 @@include('StarRating.js'); 
