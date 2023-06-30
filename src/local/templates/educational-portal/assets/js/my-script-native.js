@@ -540,8 +540,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
  //подключаю полосу прокрутки
 
- let arSimplembar = document.querySelectorAll('.simplebar-box');
- console.log(arSimplembar);
+ let arSimplembar = document.querySelectorAll('.simplebar-box'); 
     arSimplembar.forEach(simplebarItem => {
         console.log('start arSimplembar');
         new SimpleBar(simplebarItem, {

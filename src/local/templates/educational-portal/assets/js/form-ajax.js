@@ -223,10 +223,14 @@ document.addEventListener('DOMContentLoaded', function(){
     if(questionForm){
         questionForm.addEventListener('submit', function(e){
             e.preventDefault();
-            let formErrorBox = recoveryForm.querySelector('.form-error-box');
-            let questionFormData = new FormData(questionFormData);
+            let formErrorBox = recoveryForm.querySelector('.form-error-box'); 
+            let questionFormData = new FormData(questionForm); 
             questionFormData.append('sessid', window.__token);
-    
+            // let test = [];
+            // questionFormData.forEach((index, item)=>{
+            //     test[index] = item;
+            // })
+            // console.log(test);
             axios.post(
                 '/ajax/secure/support',
                 questionFormData
