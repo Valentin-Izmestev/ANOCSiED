@@ -1352,24 +1352,28 @@ document.addEventListener('DOMContentLoaded', function(){
     if(questionForm){
         questionForm.addEventListener('submit', function(e){
             e.preventDefault();
-            let formErrorBox = recoveryForm.querySelector('.form-error-box'); 
+            let formErrorBox = this.querySelector('.form-error-box'); 
+            let responseFromServer = this.querySelector('.response-from-server'); 
             let questionFormData = new FormData(questionForm); 
             questionFormData.append('sessid', window.__token);
             // let test = [];
             // questionFormData.forEach((index, item)=>{
             //     test[index] = item;
             // })
-            // console.log(test);
+            // console.log(test); 
             axios.post(
-                '/ajax/secure/support',
+                '/ajax/form/support',
                 questionFormData
-            ).then((response) => {
-              console.log(response);
+            ).then((response) => { 
               if (response.data.done == 1) {
-                hideModalFull();
+                responseFromServer.classList.add('active');
+                responseFromServer.innerHTML = 'Вопрос отправлен';
+                setTimeout(function(){
+                    hideModalFull();
+                }, 3000);
               }
-            }).catch(({response}) => {
-                errorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`); 
+            }).catch(({response}) => { 
+                formErrorBox.insertAdjacentHTML('beforeEnd', `<li>${response.data.error}</li>`); 
             });
         });
         
@@ -1398,7 +1402,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 ).then((response) => { 
                   if (response.data.done == 1) {
                     responseFromServer.classList.add('active');
-                    responseFromServer.innerHTML = 'Cпасибо, ваш отзыв учтен';
+                    responseFromServer.innerHTML = 'Cпасибо, Ваш отзыв учтен';
                     setTimeout(function(){
                         hideModalFull();
                     }, 3000);
@@ -1410,6 +1414,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
         
     }
+    // общая форма отзыва 
     let reviewFormAll = document.querySelectorAll('.review-form-all');
     if(reviewFormAll){
         reviewFormAll.forEach((currentReviewForm)=>{
@@ -1431,7 +1436,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 ).then((response) => { 
                   if (response.data.done == 1) {
                     responseFromServer.classList.add('active');
-                    responseFromServer.innerHTML = 'Cпасибо, ваш отзыв учтен';
+                    responseFromServer.innerHTML = 'Cпасибо, Ваш отзыв учтен';
                     setTimeout(function(){
                         hideModalFull();
                     }, 3000);
@@ -1448,7 +1453,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(rftpForm){
         rftpForm.addEventListener('submit', function(e){
             e.preventDefault();
-
+            let responseFromServer = this.querySelector('.response-from-server');
             let rftpFormData = new FormData(rftpForm);
             rftpFormData.append('sessid', window.__token); 
              
@@ -1471,7 +1476,7 @@ document.addEventListener('DOMContentLoaded', function(){
             });
         });
     }
-    // форма вопроса по экспертизе и подобному
+    // форма вопроса по экспертизе и подобному чему то там
     let fromMainAsk = document.querySelectorAll('.form-main-ask');
     if(fromMainAsk){
         fromMainAsk.forEach(form=>{
@@ -1484,7 +1489,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     msFormData
                 ).then((response) => { 
                   if (response.data.done == 1) {
-                    showMessageModal('Даннные ушли на сервер');
+                    showMessageModal('Спасибо за вопрос. Ответ будет отправлен на указанную в форме электронную почту');
                     setTimeout(function(){
                         form.reset();
                         hideModalFull();
