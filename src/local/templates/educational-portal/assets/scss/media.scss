@@ -51,8 +51,18 @@
             grid-template-columns: repeat(3,1fr);
         }
     }
+    .course-status {
+        .course-status__main { 
+            gap: 3%; 
+        }
+    }
  }
  @media screen and (max-width: 1100px){
+    .course-status {
+        .course-status__main { 
+            gap: 3%; 
+        }
+    }
     .scanbox-gallery { 
         grid-template-columns: repeat(3,1fr);
         grid-gap: 3rem;
@@ -147,6 +157,7 @@
         }
     }
  }
+
  // Меняю размер шрифта 
 @media screen and (max-width: 867px) {
     :root {
@@ -171,6 +182,30 @@
     .test-bedsheet{
         .columns-box{
             grid-gap: 2rem;
+        }
+    }
+    .course-statuses-step:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+    .course-status {
+        .course-status__course-name { 
+            margin-bottom: 2rem;  
+            line-height: 1.2; 
+        }
+        .course-status__main{
+            gap: 2rem;
+            flex-direction: column;
+            .course-status__cell{
+                display: flex;
+                .course-status-sell__key{
+                    margin-right: 2rem;
+                }
+                .course-status-sell__value{
+                    margin-top: 0;
+                    margin-left: auto;
+                    text-align: right;
+                }
+            }
         }
     }
 }

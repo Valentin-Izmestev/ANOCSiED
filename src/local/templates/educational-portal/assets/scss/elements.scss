@@ -13,6 +13,12 @@
 }
 .section-title{
     margin-bottom: 4rem;
+    &--lawyer-color{
+        color: var(--lawyer-color);
+    }
+    &--light-dark{
+        color: var(--light-dark);
+    }
 }
 .bat{
     position: fixed; 
@@ -1435,4 +1441,124 @@ a.file-link:hover{
     }
 }
 
+.course-statuses-step{
+    &:not(:last-child){
+        margin-bottom: 10rem;
+    }
+}
+
+.course-status{
+    background-color: var(--light);
+    padding: 3rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+    &:not(:first-child){
+        margin-top: 3rem;
+    }
+    .course-status__header{
+        display: flex;
+        margin-bottom: 1.5rem;
+    }
+    .course-status__direction{
+        padding: 0.7rem 1rem;
+        background-color: var(--text-color);
+        font-size: 1.4rem;
+        line-height: 1;
+        font-weight: 600;
+        color: var(--light);
+
+    }
+    .course-status__status-marker{
+        margin-left: auto;
+        padding: 0.7rem 1rem; 
+        background-color: var(--text-color);
+        font-size: 1.4rem;
+        line-height: 1;
+        font-weight: 600;
+        color: var(--light);
+        &--green{
+            background-color: rgba(23, 190, 40, 0.10);
+            color: var(--success-color);
+        }
+        &--red{
+            background-color: rgba(246, 20, 20, 0.10); 
+            color: var(--alert-color);
+        }
+        &--blue{
+            background-color: var(--bg-color); 
+            color: var(--expert-color);
+        }
+    }
+    .course-status__course-name{
+        display: block;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.6;
+        text-decoration: none;
+        color: var(--dark);
+        transition: var(--great-transition);
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    .course-status__main{
+        display: flex;
+        gap: 4%;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--light-dark);
+    }
+    .course-status__cell {
+        
+    }
+    a{
+        transition: var(--great-transition);
+        text-decoration: none;
+    }
+    &--lawyer{
+        .course-status__direction{
+            background-color: var(--lawyer-color);
+        }
+        a{
+            
+            &:hover{
+                color: var(--lawyer-color) !important;
+            }
+        }
+    }
+    &--expert{
+        .course-status__direction{
+            background-color: var(--expert-color);
+        }
+        a{ 
+            &:hover{
+                color: var(--expert-color) !important;
+            }
+        }
+    } 
+}
+
+.course-status-sell{
+    .course-status-sell__key{
+        display: block;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        font-weight: 600;
+        color: var(--light-dark);
+        text-transform: uppercase;
+    }
+    .course-status-sell__value{
+        display: block;
+        margin-top: 0.8rem;
+        font-size: 1.6rem;
+        line-height: 1.22;
+        color: var(--dark);
+        font-weight: 600;
+        a, span{
+            display: block;
+            font-size: inherit;
+            color: inherit;
+        }
+    }
+}
 

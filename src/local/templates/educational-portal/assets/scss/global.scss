@@ -110,7 +110,10 @@ legend{
     color: transparent;
     background-color: rgba(255, 255, 255, 0.504);
 }
-
+.invis{
+    font-size: 0;
+    color: transparent;
+}
 //.clear{clear:both; height:1px;}
 .fleft{float:left;}
 .fright{float:right;}

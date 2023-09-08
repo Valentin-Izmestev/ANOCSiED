@@ -274,7 +274,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
 
-
     // равзорачивание отзыва
     let nlShowCommentBtn = document.querySelectorAll('.review-card__show-comment-btn');
     if (nlShowCommentBtn) {
@@ -541,11 +540,46 @@ document.addEventListener('DOMContentLoaded', ()=>{
  //подключаю полосу прокрутки
 
  let arSimplembar = document.querySelectorAll('.simplebar-box'); 
-    arSimplembar.forEach(simplebarItem => {
-        console.log('start arSimplembar');
+    arSimplembar.forEach(simplebarItem => { 
         new SimpleBar(simplebarItem, {
             autoHide: false
         });
     });
 });
  
+let tableBoxSimplebar = document.querySelectorAll('.table-box-simplebar');
+if(tableBoxSimplebar.length > 0){
+    tableBoxSimplebar.forEach(item=>{
+        new SimpleBar(item, {
+            autoHide: false,
+            forceVisible: true,
+        });
+    }); 
+}
+
+let sсWrapper = document.querySelector('.simplebar-content-wrapper');
+if(sсWrapper){
+    let tableFixedPanel = document.querySelector('.participants-table-scroll-panel');
+    if(tableFixedPanel){
+        sсWrapper.addEventListener('scroll', function(){ 
+            tableFixedPanel.style.transform = `translateX(${sсWrapper.scrollLeft}px)`
+        });
+    }
+    
+}
+
+ 
+
+let nlChoicesMini = document.querySelectorAll('.choices-mini');
+
+if(nlChoicesMini.length > 0){ 
+
+    nlChoicesMini.forEach((item, index)=>{
+        new Choices(item, {
+            searchEnabled: false,
+            position: 'top'
+        });
+    });
+    
+}
+
