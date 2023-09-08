@@ -163,7 +163,10 @@
 
 .participants-table {
     font-weight: 500;
-
+    th, td{
+        text-align: center;
+        vertical-align: middle;
+    }
     .form-elem-checkbox {
         top: 3px;
         line-height: 1;
@@ -181,7 +184,9 @@
     td:nth-child(3) {
         white-space: nowrap;
     }
-
+    td:nth-child(2){
+        text-align: left;
+    }
     &.participants-table-scroll-panel {
         width: auto;
         position: absolute;
@@ -294,6 +299,7 @@
 .table-homework-box{
     position: relative;
     padding-top: 3rem;
+    padding-bottom: 1.2rem;
     overflow: auto;
     &:not(:last-of-type){
         margin-bottom: 2rem;
@@ -372,6 +378,21 @@
     }
 }
 
+.table-schedule{
+    th, td{ 
+        vertical-align: middle;
+        &:not(:nth-child(2)){
+            text-align: center;
+        }
+    }
+    th:first-child{
+        width: 50px; 
+    }
+    td:first-child{
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 1600px){
     .participants-table thead tr:first-child th:first-child {
         height: 12.6rem;
@@ -386,13 +407,5 @@
 @media screen and (max-width: 500px){
     .participants-table-scroll-panel{
         display: none;
-    }
-}
-.table-schedule{
-    th:first-child{
-        width: 50px; 
-    }
-    td:first-child{
-        text-align: center;
     }
 }

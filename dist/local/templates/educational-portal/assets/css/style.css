@@ -4005,6 +4005,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 .participants-table {
   font-weight: 500;
 }
+.participants-table th, .participants-table td {
+  text-align: center;
+  vertical-align: middle;
+}
 .participants-table .form-elem-checkbox {
   top: 3px;
   line-height: 1;
@@ -4015,6 +4019,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 .participants-table td:nth-child(2),
 .participants-table td:nth-child(3) {
   white-space: nowrap;
+}
+.participants-table td:nth-child(2) {
+  text-align: left;
 }
 .participants-table.participants-table-scroll-panel {
   width: auto;
@@ -4077,6 +4084,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 .table-homework-box {
   position: relative;
   padding-top: 3rem;
+  padding-bottom: 1.2rem;
   overflow: auto;
 }
 .table-homework-box:not(:last-of-type) {
@@ -4134,6 +4142,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   font-weight: 600;
 }
 
+.table-schedule th, .table-schedule td {
+  vertical-align: middle;
+}
+.table-schedule th:not(:nth-child(2)), .table-schedule td:not(:nth-child(2)) {
+  text-align: center;
+}
+.table-schedule th:first-child {
+  width: 50px;
+}
+.table-schedule td:first-child {
+  text-align: center;
+}
+
 @media screen and (max-width: 1600px) {
   .participants-table thead tr:first-child th:first-child {
     height: 12.6rem;
@@ -4149,13 +4170,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     display: none;
   }
 }
-.table-schedule th:first-child {
-  width: 50px;
-}
-.table-schedule td:first-child {
-  text-align: center;
-}
-
 h1, .h1 {
   font-size: 6rem;
   line-height: 1.6;
